@@ -65,7 +65,7 @@ class Config {
     }
 }
 
-class TestType {
+class   TestType {
     private Integer score;
     private String type;
 
