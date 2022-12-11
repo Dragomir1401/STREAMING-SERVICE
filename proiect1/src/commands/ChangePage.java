@@ -61,7 +61,7 @@ public class ChangePage {
                 }
                 break;
             default:
-                System.out.println("Default change page case!");
+//                System.out.println("Default change page case!");
                 break;
         }
     }
