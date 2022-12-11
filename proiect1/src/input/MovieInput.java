@@ -10,9 +10,9 @@ public class MovieInput {
     private ArrayList<String> actors;
     private ArrayList<String> countriesBanned;
 
-    private int numberOfLikes;
+    private int numLikes;
     private int rating;
-    private int numberOfRatings;
+    private int numRatings;
 
     public MovieInput() {
 
@@ -21,9 +21,9 @@ public class MovieInput {
     public MovieInput(MovieInput movieNow) {
         this.name = movieNow.name;
         this.rating = movieNow.rating;
-        this.numberOfRatings = movieNow.numberOfRatings;
+        this.numRatings = movieNow.numRatings;
         this.year = movieNow.year;
-        this.numberOfLikes = movieNow.numberOfLikes;
+        this.numLikes = movieNow.numLikes;
         this.duration = movieNow.duration;
         this.genres = new ArrayList();
         this.genres.addAll(movieNow.genres);
@@ -33,6 +33,11 @@ public class MovieInput {
         this.countriesBanned.addAll(movieNow.countriesBanned);
     }
 
+    public void resetMovies() {
+        this.numLikes = 0;
+        this.numRatings = 0;
+        this.rating = 0;
+    }
     public String getName() {
         return name;
     }
@@ -79,6 +84,30 @@ public class MovieInput {
 
     public void setCountriesBanned(ArrayList<String> countriesBanned) {
         this.countriesBanned = countriesBanned;
+    }
+
+    public int getNumLikes() {
+        return numLikes;
+    }
+
+    public void setNumLikes(int numLikes) {
+        this.numLikes = numLikes;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public int getNumRatings() {
+        return numRatings;
+    }
+
+    public void setNumRatings(int numRatings) {
+        this.numRatings = numRatings;
     }
 
     @Override

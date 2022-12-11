@@ -5,5 +5,5 @@ import input.MovieInput;
 import java.util.List;
 
 public interface Filter {
-    List<MovieInput> filter(List<MovieInput> movies, List<MovieInput> content);
+    List<MovieInput> run(List<MovieInput> movies, List<String> content);
 }

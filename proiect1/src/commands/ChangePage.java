@@ -11,7 +11,6 @@ import output.Output;
 
 import java.util.List;
 
-import static commands.MovieCommands.findMovieInstance;
 
 public class ChangePage {
     public static void run(Input input, PageNow pageNow, ActionInput action, Output output) {
@@ -19,14 +18,14 @@ public class ChangePage {
         // switch to log in or register not possible if current page is not homepage
         switch (action.getPage()) {
             case "register":
-                if (inHomepage && pageNow.getUser() == null) {
+                if (inHomepage && pageNow.getUser().getUser() == null) {
                     setPageNow(pageNow, "register");
                 } else {
                     output.getOutput().add(new CommandOutput());
                 }
                 break;
             case "login":
-                if (inHomepage && pageNow.getUser() == null) {
+                if (inHomepage && pageNow.getUser().getUser() == null) {
                     setPageNow(pageNow, "login");
                 } else {
                     output.getOutput().add(new CommandOutput());
@@ -49,13 +48,14 @@ public class ChangePage {
             case "movies":
                 if (pageNow.getUser().getUser() != null) {
                     setPageNow(pageNow, "movies", input.getMovies(), new FilterByCountry());
+                    output.getOutput().add(new CommandOutput(pageNow.getMovieList(), pageNow.getUser().getUser()));
                 } else {
                     output.getOutput().add(new CommandOutput());
                 }
                 break;
             case "see details":
-                if (pageNow.getName().equals("movies") && findMovieInstance(input, action.getMovie()) != null) {
-                    setPageNow(pageNow, "see details", findMovieInstance(input, action.getMovie()), output);
+                if (pageNow.getName().equals("movies") && pageNow.getMoviesCommands().findMovieInstance(input, action.getMovie()) != null) {
+                    setPageNow(pageNow, "see details", pageNow.getMoviesCommands().findMovieInstance(input, action.getMovie()), output);
                 } else {
                     output.getOutput().add(new CommandOutput());
                 }
@@ -86,7 +86,7 @@ public class ChangePage {
     private static void setPageNow(PageNow pageNow, String name, MovieInput movieInput, Output output) {
         pageNow.setName(name);
         pageNow.setMovie(movieInput);
-        pageNow.getMoviesCommands().getMovieDetails(movieInput, output, pageNow.getUser().getUser());
+        pageNow.getMoviesCommands().getMovieDetails(movieInput, output, pageNow.getUser().getUser(), pageNow);
     }
 
 }

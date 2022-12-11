@@ -5,7 +5,6 @@ import sorters.Sort;
 public class SortInput {
     private String rating;
     private String duration;
-    private Sort sort;
 
     public String getRating() {
         return rating;
@@ -23,20 +22,12 @@ public class SortInput {
         this.duration = duration;
     }
 
-    public Sort getSort() {
-        return sort;
-    }
-
-    public void setSort(Sort sort) {
-        this.sort = sort;
-    }
 
     @Override
     public String toString() {
         return "SortInput{" +
                 "rating='" + rating + '\'' +
                 ", duration='" + duration + '\'' +
-                ", sort=" + sort +
                 '}';
     }
 }

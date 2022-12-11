@@ -9,12 +9,12 @@
       "country" : "Romania",
       "balance" : "300"
     },
-    "tokensCount" : 0,
-    "numFreePremiumMovies" : 15,
     "purchasedMovies" : [ ],
     "watchedMovies" : [ ],
     "likedMovies" : [ ],
-    "ratedMovies" : [ ]
+    "ratedMovies" : [ ],
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15
   }
 }, {
   "error" : "Error",
@@ -31,12 +31,12 @@
       "country" : "Russia",
       "balance" : "1337"
     },
-    "tokensCount" : 0,
-    "numFreePremiumMovies" : 15,
     "purchasedMovies" : [ ],
     "watchedMovies" : [ ],
     "likedMovies" : [ ],
-    "ratedMovies" : [ ]
+    "ratedMovies" : [ ],
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15
   }
 }, {
   "error" : null,
@@ -49,12 +49,12 @@
       "country" : "Russia",
       "balance" : "1337"
     },
-    "tokensCount" : 0,
-    "numFreePremiumMovies" : 15,
     "purchasedMovies" : [ ],
     "watchedMovies" : [ ],
     "likedMovies" : [ ],
-    "ratedMovies" : [ ]
+    "ratedMovies" : [ ],
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15
   }
 }, {
   "error" : null,
@@ -67,11 +67,11 @@
       "country" : "Russia",
       "balance" : "1337"
     },
-    "tokensCount" : 0,
-    "numFreePremiumMovies" : 15,
     "purchasedMovies" : [ ],
     "watchedMovies" : [ ],
     "likedMovies" : [ ],
-    "ratedMovies" : [ ]
+    "ratedMovies" : [ ],
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15
   }
 } ]
