@@ -12,6 +12,7 @@ import sorters.Sort;
 import sorters.SortByDuration;
 import sorters.SortByRating;
 
+import java.io.ObjectOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,13 +20,15 @@ import java.util.List;
 public class OnPage {
     public static void run(Input input, PageNow pageNow, ActionInput action, Output output) {
         if (action.getFeature() != null) {
-            System.out.println(action.getFeature());
+//            System.out.println(action.getFeature());
             switch (action.getFeature()) {
                 case "register" -> register(input, pageNow, action, output);
                 case "login" -> login(input, pageNow, action, output);
                 case "search" -> search(input, pageNow, action, output);
                 case "filter" -> filter(input, pageNow, action, output);
-                default -> System.out.println("Default on page case!");
+                case "buy tokens" -> buyTokens(pageNow, action, output);
+                default -> { //System.out.println("Default on page case!");
+                }
             }
         }
     }
@@ -125,6 +128,26 @@ public class OnPage {
                 // manage output
                 output.getOutput().add(new CommandOutput(pageNow.getMovieList(), pageNow.getUser().getUser()));
             }
+            return;
+        }
+        // error case
+        output.getOutput().add(new CommandOutput());
+    }
+
+    private static void buyTokens(PageNow pageNow, ActionInput action, Output output) {
+        // check to see if we are on correct page
+        if (pageNow.getName().equals("upgrades")) {
+            pageNow.getTokensCommands().buyTokens(pageNow.getUser().getUser(), action, output);
+            return;
+        }
+        // error case
+        output.getOutput().add(new CommandOutput());
+    }
+
+    private static void buyPremiumAccount(PageNow pageNow, ActionInput actionInput, Output output) {
+        // check to see if we are on correct page
+        if (pageNow.getName().equals("upgrades")) {
+
             return;
         }
         // error case

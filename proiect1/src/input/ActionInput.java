@@ -9,7 +9,6 @@ public class ActionInput {
     private FilterInput filters;
     private int rate;
     private String movie;
-
     private int count;
 
     public String getType() {

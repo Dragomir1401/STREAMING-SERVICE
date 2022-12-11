@@ -10,9 +10,6 @@ import commands.UserCommands;
 
 public class MovieCommands {
     private static MovieCommands instance;
-    public static void run() {
-
-    }
 
     public static MovieCommands getInstance() {
         if (instance == null) {
