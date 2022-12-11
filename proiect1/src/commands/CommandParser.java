@@ -15,6 +15,7 @@ public class CommandParser {
                     ChangePage.run(input, pageNow, action, output);
                     break;
                 case "on page":
+                    OnPage.run(input, pageNow, action, output);
                     break;
                 default:
                     System.out.println("Default command case!");

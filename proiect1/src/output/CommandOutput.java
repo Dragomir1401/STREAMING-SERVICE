@@ -18,9 +18,13 @@ public class CommandOutput {
     }
 
     public CommandOutput(List<MovieInput> currentMoviesList, UserInput currentUser) {
-        this.error = "Error";
-        this.currentMoviesList = currentMoviesList;
-        this.currentUser = currentUser;
+        this.currentMoviesList = new ArrayList<>();
+        if (currentMoviesList != null) {
+            for (MovieInput movie : currentMoviesList) {
+                this.currentMoviesList.add(new MovieInput(movie));
+            }
+        }
+        this.currentUser = new UserInput(currentUser);
     }
 
     public CommandOutput(MovieInput movie, UserInput currentUser) {

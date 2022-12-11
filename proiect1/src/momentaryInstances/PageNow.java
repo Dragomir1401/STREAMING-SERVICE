@@ -76,7 +76,7 @@ public class PageNow {
         return moviesCommands;
     }
 
-    public void setMoviesActions(MovieCommands moviesActions) {
+    public void setMoviesCommands(MovieCommands moviesActions) {
         this.moviesCommands = moviesActions;
     }
 
