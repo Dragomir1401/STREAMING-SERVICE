@@ -11,11 +11,11 @@ public class MovieInput {
     private ArrayList<String> countriesBanned;
 
     private int numLikes;
-    private double rating;
+    private Double rating;
     private int numRatings;
 
     public MovieInput() {
-        this.rating = 0;
+        this.rating = 0.00;
         this.numLikes = 0;
     }
 
@@ -37,7 +37,7 @@ public class MovieInput {
     public void resetMovies() {
         this.numLikes = 0;
         this.numRatings = 0;
-        this.rating = 0;
+        this.rating = 0.00;
     }
 
     public void increaseLikes() {

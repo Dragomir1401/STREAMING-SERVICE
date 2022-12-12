@@ -1,8 +1,6 @@
 package commands;
 
-import filters.Filter;
-import filters.FilterByCountry;
-import filters.FilterStartsWith;
+import filters.*;
 import input.*;
 import momentaryInstances.PageNow;
 import momentaryInstances.UserNow;
@@ -103,18 +101,38 @@ public class OnPage {
 
     private static void filter(Input input, PageNow pageNow, ActionInput action, Output output) {
         if (pageNow.getName().equals("movies")) {
-            if (action.getFilters().getSort() != null) {
-                // initialise filter
-                FilterByCountry filterByCountry = new FilterByCountry();
-                // get permitted movies in that country
-                List<MovieInput> permittedMovies = filterByCountry.filter(input.getMovies(), pageNow.getUser().getUser());
+            // initialise filter
+            FilterByCountry filterByCountry = new FilterByCountry();
+            // get permitted movies in that country
+            List<MovieInput> permittedMovies = filterByCountry.filter(input.getMovies(), pageNow.getUser().getUser());
 
+            // filter by contains if necessary
+            if (action.getFilters().getContains() != null) {
+                // filter by contains given genre
+                if (action.getFilters().getContains().getGenre() != null) {
+                    FilterByGenre filter = new FilterByGenre();
+                    if (filter.run(permittedMovies, action.getFilters().getContains().getGenre()) != null)
+                        permittedMovies = new ArrayList<>(filter.run(permittedMovies, action.getFilters().getContains().getGenre()));
+                }
+
+                // filter by contains given actors
+                if (action.getFilters().getContains().getActors() != null) {
+                    FilterByActors filter = new FilterByActors();
+                    if (filter.run(permittedMovies, action.getFilters().getContains().getActors()) != null)
+                        permittedMovies = new ArrayList<>(filter.run(permittedMovies, action.getFilters().getContains().getActors()));
+                }
+            }
+
+            if (action.getFilters().getSort() != null) {
+
+                boolean sortedByDuration = false;
                 // case for sorters
                 if (action.getFilters().getSort().getDuration() != null) {
                     // initialise sorter
                     SortByDuration sort = new SortByDuration();
                     // run the sort on permitted movies
                     sort.run(permittedMovies, action.getFilters().getSort().getDuration());
+                    sortedByDuration = true;
                 }
 
                 // case for sorters
@@ -122,14 +140,20 @@ public class OnPage {
                     // initialise sorter
                     SortByRating sort = new SortByRating();
                     // run the sort on permitted movies
-                    sort.run(permittedMovies, action.getFilters().getSort().getRating());
+                    if (sortedByDuration) {
+                        sort.runForEqualCases(permittedMovies, action.getFilters().getSort().getRating());
+                    } else {
+                        sort.run(permittedMovies, action.getFilters().getSort().getRating());
+                    }
                 }
 
-                // set current movie list
-                pageNow.setMovieList(permittedMovies);
-                // manage output
-                output.getOutput().add(new CommandOutput(pageNow.getMovieList(), pageNow.getUser().getUser()));
             }
+
+            // set current movie list
+            pageNow.setMovieList(new ArrayList<>(permittedMovies));
+
+            // manage output
+            output.getOutput().add(new CommandOutput(pageNow.getMovieList(), pageNow.getUser().getUser()));
             return;
         }
         // error case

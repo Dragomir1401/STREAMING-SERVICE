@@ -8,6 +8,10 @@ import input.UserInput;
 import momentaryInstances.PageNow;
 import output.CommandOutput;
 import output.Output;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Formatter;
 import java.util.List;
 
 public class MovieCommands {
@@ -172,7 +176,8 @@ public class MovieCommands {
 
         // create rating for movie
         double rating;
-        double sum = 0;
+
+        double sum = 0.00;
         for (UserInput userInput : input.getUsers()) {
             // find rated movie for user
             MovieInput ratedMovie = findMovieInstance(userInput.getRatedMovies(), movie.getName());
@@ -184,7 +189,7 @@ public class MovieCommands {
         }
 
         // calculate rating
-        rating = sum / movie.getNumRatings();
+        rating = sum / (double) movie.getNumRatings();
 
         // set rating
         movie.setRating(rating);
@@ -195,6 +200,11 @@ public class MovieCommands {
         // create output
         output.getOutput().add(new CommandOutput(new MovieInput(movie), pageNow.getUser().getUser()));
     }
+
+    double round2(double value) {
+        return (int)(value * 100 + 0.5) / 100.0;
+    }
+
 
     public void modifyAppearances(Input input, PageNow pageNow, MovieInput movie, String rateOrLike) {
         // modify movie in all its appearances
