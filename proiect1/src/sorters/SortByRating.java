@@ -11,10 +11,10 @@ public class SortByRating implements Sort {
     public void run(List<MovieInput> movies, String parameter) {
 
         if (parameter.equals("increasing")) {
-            movies.sort(Comparator.comparingInt(MovieInput::getRating));
+            movies.sort(Comparator.comparingDouble(MovieInput::getRating));
         }
         else if (parameter.equals("decreasing")){
-            movies.sort(Comparator.comparingInt(MovieInput::getRating).reversed());
+            movies.sort(Comparator.comparingDouble(MovieInput::getRating).reversed());
         }
     }
 }

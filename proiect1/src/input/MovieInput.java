@@ -11,11 +11,12 @@ public class MovieInput {
     private ArrayList<String> countriesBanned;
 
     private int numLikes;
-    private int rating;
+    private double rating;
     private int numRatings;
 
     public MovieInput() {
-
+        this.rating = 0;
+        this.numLikes = 0;
     }
 
     public MovieInput(MovieInput movieNow) {
@@ -38,6 +39,14 @@ public class MovieInput {
         this.numRatings = 0;
         this.rating = 0;
     }
+
+    public void increaseLikes() {
+        this.numLikes++;
+    }
+    public void increaseNumRatings() {
+        this.numRatings++;
+    }
+
     public String getName() {
         return name;
     }
@@ -94,11 +103,11 @@ public class MovieInput {
         this.numLikes = numLikes;
     }
 
-    public int getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 

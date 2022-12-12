@@ -49,6 +49,7 @@ public class Main {
 
         // reset current user
         pageNow.getUser().setUser(null);
+        pageNow.setInput(null);
 
         // reset input
         programInput.getUsers().forEach(UserInput::resetUser);

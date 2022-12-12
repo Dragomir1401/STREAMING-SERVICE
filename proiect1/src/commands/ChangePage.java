@@ -54,14 +54,14 @@ public class ChangePage {
                 }
                 break;
             case "see details":
-                if (pageNow.getName().equals("movies") && pageNow.getMoviesCommands().findMovieInstance(input, action.getMovie()) != null) {
-                    setPageNow(pageNow, "see details", pageNow.getMoviesCommands().findMovieInstance(input, action.getMovie()), output);
+                if (pageNow.getName().equals("movies") && pageNow.getMoviesCommands().findMovieInstance(input.getMovies(), action.getMovie()) != null) {
+                    setPageNow(pageNow, "see details", pageNow.getMoviesCommands().findMovieInstance(input.getMovies(), action.getMovie()), output);
                 } else {
                     output.getOutput().add(new CommandOutput());
                 }
                 break;
             default:
-//                System.out.println("Default change page case!");
+                System.out.println("Default change page case!");
                 break;
         }
     }
