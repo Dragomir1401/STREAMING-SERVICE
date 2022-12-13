@@ -1,6 +1,5 @@
 package input;
 
-import filters.Filter;
 import items.Contains;
 
 public class FilterInput {

@@ -11,6 +11,7 @@ import output.Output;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.Formatter;
 import java.util.List;
 
@@ -161,7 +162,7 @@ public class MovieCommands {
     public void rateMovie(Input input, PageNow pageNow, Output output, ActionInput actionInput) {
         // check to see if movie is in watched movies
         MovieInput movieInstance = findMovieInstanceForEdgeCase(pageNow, actionInput);
-        if (movieInstance == null) {
+        if (movieInstance == null || actionInput.getRate() > 5 || actionInput.getRate() < 1) {
             output.getOutput().add(new CommandOutput());
             return;
         }
@@ -175,7 +176,7 @@ public class MovieCommands {
         pageNow.getUser().getUser().getRatedMovies().add(new MovieInput(movie));
 
         // create rating for movie
-        double rating;
+        double rating = 0.00;
 
         double sum = 0.00;
         for (UserInput userInput : input.getUsers()) {
@@ -187,12 +188,14 @@ public class MovieCommands {
                 sum += ratedMovie.getRating();
             }
         }
-
         // calculate rating
         rating = sum / (double) movie.getNumRatings();
 
+        DecimalFormat decimalFormat = new DecimalFormat("0.00");
+        Double rating1 = Double.parseDouble(decimalFormat.format(rating));
+
         // set rating
-        movie.setRating(rating);
+        movie.setRating(rating1);
 
         // modify all appearances
         modifyAppearances(input, pageNow, movie, "like");
@@ -200,11 +203,6 @@ public class MovieCommands {
         // create output
         output.getOutput().add(new CommandOutput(new MovieInput(movie), pageNow.getUser().getUser()));
     }
-
-    double round2(double value) {
-        return (int)(value * 100 + 0.5) / 100.0;
-    }
-
 
     public void modifyAppearances(Input input, PageNow pageNow, MovieInput movie, String rateOrLike) {
         // modify movie in all its appearances
