@@ -2,18 +2,14 @@ import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import commands.HomepageSetter;
-import commands.UserCommands;
 import input.Input;
-import input.ActionInput;
 import commands.CommandParser;
 import input.MovieInput;
 import input.UserInput;
 import momentaryInstances.PageNow;
 import output.Output;
-
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 public class Main {
 

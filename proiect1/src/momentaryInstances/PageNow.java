@@ -14,7 +14,6 @@ public class PageNow {
     private UserCommands userCommands;
     private TokenCommands tokensCommands;
     private MovieCommands moviesCommands;
-    private Input input;
     private List<MovieInput> movieList;
     private MovieInput movie;
 
@@ -26,7 +25,6 @@ public class PageNow {
         this.userCommands = userCommands;
         this.tokensCommands = tokensCommands;
         this.moviesCommands = moviesActions;
-        this.input = input;
         this.movieList = movieInputList;
         this.movie = movieInput;
     }
@@ -37,7 +35,6 @@ public class PageNow {
         this.userCommands = UserCommands.getInstance();
         this.tokensCommands = TokenCommands.getInstance();
         this.moviesCommands = MovieCommands.getInstance();
-        this.input = input;
     }
 
     public UserNow getUser() {
@@ -78,14 +75,6 @@ public class PageNow {
 
     public void setMoviesCommands(MovieCommands moviesActions) {
         this.moviesCommands = moviesActions;
-    }
-
-    public Input getInput() {
-        return input;
-    }
-
-    public void setInput(Input input) {
-        this.input = input;
     }
 
     public List<MovieInput> getMovieList() {

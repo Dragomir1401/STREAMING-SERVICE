@@ -38,7 +38,7 @@
     "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
     "countriesBanned" : [ "Russia" ],
     "numLikes" : 0,
-    "rating" : 0,
+    "rating" : 0.0,
     "numRatings" : 0
   }, {
     "name" : "Titanic",
@@ -48,7 +48,7 @@
     "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
     "countriesBanned" : [ "Russia" ],
     "numLikes" : 0,
-    "rating" : 0,
+    "rating" : 0.0,
     "numRatings" : 0
   } ],
   "currentUser" : {
@@ -94,7 +94,7 @@
     "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
     "countriesBanned" : [ "Russia" ],
     "numLikes" : 0,
-    "rating" : 0,
+    "rating" : 0.0,
     "numRatings" : 0
   }, {
     "name" : "Titanic",
@@ -104,7 +104,7 @@
     "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
     "countriesBanned" : [ "Russia" ],
     "numLikes" : 0,
-    "rating" : 0,
+    "rating" : 0.0,
     "numRatings" : 0
   } ],
   "currentUser" : {
@@ -154,7 +154,7 @@
     "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
     "countriesBanned" : [ "Russia" ],
     "numLikes" : 0,
-    "rating" : 0,
+    "rating" : 0.0,
     "numRatings" : 0
   }, {
     "name" : "Titanic",
@@ -164,22 +164,22 @@
     "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
     "countriesBanned" : [ "Russia" ],
     "numLikes" : 0,
-    "rating" : 0,
+    "rating" : 0.0,
     "numRatings" : 0
   } ],
   "currentUser" : {
     "credentials" : {
       "name" : "Eduard",
       "password" : "secret",
-      "accountType" : "standard",
+      "accountType" : "premium",
       "country" : "Romania",
-      "balance" : "200"
+      "balance" : "150"
     },
     "purchasedMovies" : [ ],
     "watchedMovies" : [ ],
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
-    "tokensCount" : 0,
+    "tokensCount" : 40,
     "numFreePremiumMovies" : 15
   }
 }, {
@@ -200,23 +200,167 @@
     "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
     "countriesBanned" : [ "Russia" ],
     "numLikes" : 0,
-    "rating" : 0,
+    "rating" : 0.0,
     "numRatings" : 0
   } ],
   "currentUser" : {
     "credentials" : {
       "name" : "Eduard",
       "password" : "secret",
-      "accountType" : "standard",
+      "accountType" : "premium",
       "country" : "Romania",
-      "balance" : "200"
+      "balance" : "150"
     },
     "purchasedMovies" : [ ],
     "watchedMovies" : [ ],
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
-    "tokensCount" : 0,
+    "tokensCount" : 40,
     "numFreePremiumMovies" : 15
+  }
+}, {
+  "error" : null,
+  "currentMoviesList" : [ {
+    "name" : "Titanic",
+    "year" : 2019,
+    "duration" : 131,
+    "genres" : [ "Action", "Thriller", "Crime" ],
+    "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+    "countriesBanned" : [ "Russia" ],
+    "numLikes" : 0,
+    "rating" : 0.0,
+    "numRatings" : 0
+  } ],
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Eduard",
+      "password" : "secret",
+      "accountType" : "premium",
+      "country" : "Romania",
+      "balance" : "150"
+    },
+    "purchasedMovies" : [ {
+      "name" : "Titanic",
+      "year" : 2019,
+      "duration" : 131,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ],
+      "numLikes" : 0,
+      "rating" : 0.0,
+      "numRatings" : 0
+    } ],
+    "watchedMovies" : [ ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "tokensCount" : 40,
+    "numFreePremiumMovies" : 14
+  }
+}, {
+  "error" : null,
+  "currentMoviesList" : [ {
+    "name" : "Titanic",
+    "year" : 2019,
+    "duration" : 131,
+    "genres" : [ "Action", "Thriller", "Crime" ],
+    "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+    "countriesBanned" : [ "Russia" ],
+    "numLikes" : 0,
+    "rating" : 0.0,
+    "numRatings" : 0
+  } ],
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Eduard",
+      "password" : "secret",
+      "accountType" : "premium",
+      "country" : "Romania",
+      "balance" : "150"
+    },
+    "purchasedMovies" : [ {
+      "name" : "Titanic",
+      "year" : 2019,
+      "duration" : 131,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ],
+      "numLikes" : 0,
+      "rating" : 0.0,
+      "numRatings" : 0
+    } ],
+    "watchedMovies" : [ {
+      "name" : "Titanic",
+      "year" : 2019,
+      "duration" : 131,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ],
+      "numLikes" : 0,
+      "rating" : 0.0,
+      "numRatings" : 0
+    } ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "tokensCount" : 40,
+    "numFreePremiumMovies" : 14
+  }
+}, {
+  "error" : null,
+  "currentMoviesList" : [ {
+    "name" : "Titanic",
+    "year" : 2019,
+    "duration" : 131,
+    "genres" : [ "Action", "Thriller", "Crime" ],
+    "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+    "countriesBanned" : [ "Russia" ],
+    "numLikes" : 1,
+    "rating" : 0.0,
+    "numRatings" : 0
+  } ],
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Eduard",
+      "password" : "secret",
+      "accountType" : "premium",
+      "country" : "Romania",
+      "balance" : "150"
+    },
+    "purchasedMovies" : [ {
+      "name" : "Titanic",
+      "year" : 2019,
+      "duration" : 131,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ],
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0
+    } ],
+    "watchedMovies" : [ {
+      "name" : "Titanic",
+      "year" : 2019,
+      "duration" : 131,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ],
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0
+    } ],
+    "likedMovies" : [ {
+      "name" : "Titanic",
+      "year" : 2019,
+      "duration" : 131,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ],
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0
+    } ],
+    "ratedMovies" : [ ],
+    "tokensCount" : 40,
+    "numFreePremiumMovies" : 14
   }
 }, {
   "error" : null,
@@ -228,7 +372,7 @@
     "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
     "countriesBanned" : [ "Russia" ],
     "numLikes" : 0,
-    "rating" : 0,
+    "rating" : 0.0,
     "numRatings" : 0
   }, {
     "name" : "Titanic",
@@ -237,24 +381,54 @@
     "genres" : [ "Action", "Thriller", "Crime" ],
     "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
     "countriesBanned" : [ "Russia" ],
-    "numLikes" : 0,
-    "rating" : 0,
+    "numLikes" : 1,
+    "rating" : 0.0,
     "numRatings" : 0
   } ],
   "currentUser" : {
     "credentials" : {
       "name" : "Eduard",
       "password" : "secret",
-      "accountType" : "standard",
+      "accountType" : "premium",
       "country" : "Romania",
-      "balance" : "200"
+      "balance" : "150"
     },
-    "purchasedMovies" : [ ],
-    "watchedMovies" : [ ],
-    "likedMovies" : [ ],
+    "purchasedMovies" : [ {
+      "name" : "Titanic",
+      "year" : 2019,
+      "duration" : 131,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ],
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0
+    } ],
+    "watchedMovies" : [ {
+      "name" : "Titanic",
+      "year" : 2019,
+      "duration" : 131,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ],
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0
+    } ],
+    "likedMovies" : [ {
+      "name" : "Titanic",
+      "year" : 2019,
+      "duration" : 131,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ],
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0
+    } ],
     "ratedMovies" : [ ],
-    "tokensCount" : 0,
-    "numFreePremiumMovies" : 15
+    "tokensCount" : 40,
+    "numFreePremiumMovies" : 14
   }
 }, {
   "error" : null,
@@ -266,22 +440,72 @@
     "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
     "countriesBanned" : [ "Russia" ],
     "numLikes" : 0,
-    "rating" : 0,
+    "rating" : 0.0,
     "numRatings" : 0
   } ],
   "currentUser" : {
     "credentials" : {
       "name" : "Eduard",
       "password" : "secret",
-      "accountType" : "standard",
+      "accountType" : "premium",
       "country" : "Romania",
-      "balance" : "200"
+      "balance" : "150"
     },
-    "purchasedMovies" : [ ],
-    "watchedMovies" : [ ],
-    "likedMovies" : [ ],
+    "purchasedMovies" : [ {
+      "name" : "Titanic",
+      "year" : 2019,
+      "duration" : 131,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ],
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0
+    } ],
+    "watchedMovies" : [ {
+      "name" : "Titanic",
+      "year" : 2019,
+      "duration" : 131,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ],
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0
+    } ],
+    "likedMovies" : [ {
+      "name" : "Titanic",
+      "year" : 2019,
+      "duration" : 131,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ],
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0
+    } ],
     "ratedMovies" : [ ],
-    "tokensCount" : 0,
-    "numFreePremiumMovies" : 15
+    "tokensCount" : 40,
+    "numFreePremiumMovies" : 14
   }
+}, {
+  "error" : "Error",
+  "currentMoviesList" : [ ],
+  "currentUser" : null
+}, {
+  "error" : "Error",
+  "currentMoviesList" : [ ],
+  "currentUser" : null
+}, {
+  "error" : "Error",
+  "currentMoviesList" : [ ],
+  "currentUser" : null
+}, {
+  "error" : "Error",
+  "currentMoviesList" : [ ],
+  "currentUser" : null
+}, {
+  "error" : "Error",
+  "currentMoviesList" : [ ],
+  "currentUser" : null
 } ]

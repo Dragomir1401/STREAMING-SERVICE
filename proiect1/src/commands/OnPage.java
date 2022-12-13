@@ -1,8 +1,6 @@
 package commands;
 
-import filters.Filter;
-import filters.FilterByCountry;
-import filters.FilterStartsWith;
+import filters.*;
 import input.*;
 import momentaryInstances.PageNow;
 import momentaryInstances.UserNow;
@@ -20,15 +18,18 @@ import java.util.List;
 public class OnPage {
     public static void run(Input input, PageNow pageNow, ActionInput action, Output output) {
         if (action.getFeature() != null) {
-//            System.out.println(action.getFeature());
             switch (action.getFeature()) {
                 case "register" -> register(input, pageNow, action, output);
                 case "login" -> login(input, pageNow, action, output);
                 case "search" -> search(input, pageNow, action, output);
                 case "filter" -> filter(input, pageNow, action, output);
                 case "buy tokens" -> buyTokens(pageNow, action, output);
-                default -> { //System.out.println("Default on page case!");
-                }
+                case "buy premium account" -> buyPremiumAccount(pageNow, action, output);
+                case "purchase" -> purchaseMovie(input, pageNow, action, output);
+                case "watch" -> watchMovie(pageNow, action, output);
+                case "like" -> likeMovie(input, pageNow, action, output);
+                case "rate" -> rateMovie(input, pageNow, action, output);
+                default -> System.out.println("Default on page case!");
             }
         }
     }
@@ -65,7 +66,6 @@ public class OnPage {
                 // set page to homepage with authentication
                 pageNow.setName("homepage");
                 // add output
-//                System.out.println(pageNow.getUser().getUser());
                 output.getOutput().add(new CommandOutput(pageNow.getMovieList(), pageNow.getUser().getUser()));
                 // exit
                 return;
@@ -101,33 +101,59 @@ public class OnPage {
 
     private static void filter(Input input, PageNow pageNow, ActionInput action, Output output) {
         if (pageNow.getName().equals("movies")) {
-            if (action.getFilters().getSort() != null) {
-                // initialise filter
-                FilterByCountry filterByCountry = new FilterByCountry();
-                // get permitted movies in that country
-                List<MovieInput> permittedMovies = filterByCountry.filter(input.getMovies(), pageNow.getUser().getUser());
+            // initialise filter
+            FilterByCountry filterByCountry = new FilterByCountry();
+            // get permitted movies in that country
+            List<MovieInput> permittedMovies = filterByCountry.filter(input.getMovies(), pageNow.getUser().getUser());
 
-
-                // case for sorters
-                if (action.getFilters().getSort().getRating() != null) {
-                    // initialise sorter
-                    SortByRating sort = new SortByRating();
-                    // run the sort on permitted movies
-                    sort.run(permittedMovies, action.getFilters().getSort().getRating());
+            // filter by contains if necessary
+            if (action.getFilters().getContains() != null) {
+                // filter by contains given genre
+                if (action.getFilters().getContains().getGenre() != null) {
+                    FilterByGenre filter = new FilterByGenre();
+                    if (filter.run(permittedMovies, action.getFilters().getContains().getGenre()) != null)
+                        permittedMovies = new ArrayList<>(filter.run(permittedMovies, action.getFilters().getContains().getGenre()));
                 }
 
+                // filter by contains given actors
+                if (action.getFilters().getContains().getActors() != null) {
+                    FilterByActors filter = new FilterByActors();
+                    if (filter.run(permittedMovies, action.getFilters().getContains().getActors()) != null)
+                        permittedMovies = new ArrayList<>(filter.run(permittedMovies, action.getFilters().getContains().getActors()));
+                }
+            }
+
+            if (action.getFilters().getSort() != null) {
+
+                boolean sortedByDuration = false;
                 // case for sorters
                 if (action.getFilters().getSort().getDuration() != null) {
                     // initialise sorter
                     SortByDuration sort = new SortByDuration();
                     // run the sort on permitted movies
                     sort.run(permittedMovies, action.getFilters().getSort().getDuration());
+                    sortedByDuration = true;
                 }
-                // set current movie list
-                pageNow.setMovieList(permittedMovies);
-                // manage output
-                output.getOutput().add(new CommandOutput(pageNow.getMovieList(), pageNow.getUser().getUser()));
+
+                // case for sorters
+                if (action.getFilters().getSort().getRating() != null) {
+                    // initialise sorter
+                    SortByRating sort = new SortByRating();
+                    // run the sort on permitted movies
+                    if (sortedByDuration) {
+                        sort.runForEqualCases(permittedMovies, action.getFilters().getSort().getRating());
+                    } else {
+                        sort.run(permittedMovies, action.getFilters().getSort().getRating());
+                    }
+                }
+
             }
+
+            // set current movie list
+            pageNow.setMovieList(new ArrayList<>(permittedMovies));
+
+            // manage output
+            output.getOutput().add(new CommandOutput(pageNow.getMovieList(), pageNow.getUser().getUser()));
             return;
         }
         // error case
@@ -147,10 +173,52 @@ public class OnPage {
     private static void buyPremiumAccount(PageNow pageNow, ActionInput actionInput, Output output) {
         // check to see if we are on correct page
         if (pageNow.getName().equals("upgrades")) {
-
+            pageNow.getTokensCommands().buyPremiumAccount(pageNow.getUser().getUser(), actionInput, output);
             return;
         }
         // error case
         output.getOutput().add(new CommandOutput());
     }
+
+    private static void purchaseMovie(Input input, PageNow pageNow, ActionInput actionInput, Output output) {
+        // check to see if we are on correct page
+        if (pageNow.getName().equals("see details") || pageNow.getName().equals("upgrades")) {
+            pageNow.getMoviesCommands().purchaseMovie(input, output, pageNow, actionInput);
+            return;
+        }
+        // error case
+        output.getOutput().add(new CommandOutput());
+    }
+
+    private static void watchMovie(PageNow pageNow, ActionInput actionInput, Output output) {
+        // check to see if we are on correct page
+        if (pageNow.getName().equals("see details") || pageNow.getName().equals("upgrades")) {
+            pageNow.getMoviesCommands().watchMovie(pageNow, output, actionInput);
+            return;
+        }
+        // error case
+        output.getOutput().add(new CommandOutput());
+    }
+
+    private static void likeMovie(Input input, PageNow pageNow, ActionInput actionInput, Output output) {
+        // check to see if we are on correct page
+        if (pageNow.getName().equals("see details") || pageNow.getName().equals("upgrades")) {
+            pageNow.getMoviesCommands().likeMovie(input, pageNow, output, actionInput);
+            return;
+        }
+        // error case
+        output.getOutput().add(new CommandOutput());
+
+    }
+
+    private static void rateMovie(Input input, PageNow pageNow, ActionInput actionInput, Output output) {
+        // check to see if we are on correct page
+        if (pageNow.getName().equals("see details") || pageNow.getName().equals("upgrades")) {
+            pageNow.getMoviesCommands().rateMovie(input, pageNow, output, actionInput);
+            return;
+        }
+        // error case
+        output.getOutput().add(new CommandOutput());
+    }
+
 }
