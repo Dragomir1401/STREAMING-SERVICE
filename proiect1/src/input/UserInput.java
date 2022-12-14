@@ -5,55 +5,56 @@ import java.util.ArrayList;
 
 public class UserInput {
     private CredentialsInput credentials;
-    private List<MovieInput> purchasedMovies = new ArrayList();
-    private List<MovieInput> watchedMovies = new ArrayList();
-    private List<MovieInput> likedMovies = new ArrayList();
-    private List<MovieInput> ratedMovies = new ArrayList();
+    private List<MovieInput> purchasedMovies = new ArrayList<>();
+    private List<MovieInput> watchedMovies = new ArrayList<>();
+    private List<MovieInput> likedMovies = new ArrayList<>();
+    private List<MovieInput> ratedMovies = new ArrayList<>();
     private int tokensCount;
     private int numFreePremiumMovies = 15;
 
     public UserInput() {
 
     }
-    public UserInput(UserInput currentUser) {
+    public UserInput(final UserInput userInput) {
         this.credentials = new CredentialsInput();
-        this.credentials.setName(currentUser.getCredentials().getName());
-        this.credentials.setAccountType(currentUser.getCredentials().getAccountType());
-        this.credentials.setBalance(currentUser.getCredentials().getBalance());
-        this.credentials.setCountry(currentUser.getCredentials().getCountry());
-        this.credentials.setPassword(currentUser.getCredentials().getPassword());
-        this.tokensCount = currentUser.tokensCount;
-        this.numFreePremiumMovies = currentUser.numFreePremiumMovies;
-        this.purchasedMovies = new ArrayList();
-        this.purchasedMovies.addAll(currentUser.purchasedMovies);
-        this.watchedMovies = new ArrayList();
-        this.watchedMovies.addAll(currentUser.watchedMovies);
-        this.likedMovies = new ArrayList();
-        this.likedMovies.addAll(currentUser.likedMovies);
-        this.ratedMovies = new ArrayList();
-        this.ratedMovies.addAll(currentUser.ratedMovies);
+        this.credentials.setAccountType(userInput.getCredentials().getAccountType());
+        this.credentials.setPassword(userInput.getCredentials().getPassword());
+        this.credentials.setBalance(userInput.getCredentials().getBalance());
+        this.credentials.setCountry(userInput.getCredentials().getCountry());
+        this.numFreePremiumMovies = userInput.getNumFreePremiumMovies();
+        this.credentials.setName(userInput.getCredentials().getName());
+        this.watchedMovies = new ArrayList<>();
+        this.purchasedMovies = new ArrayList<>();
+        this.likedMovies = new ArrayList<>();
+        this.ratedMovies = new ArrayList<>();
+        this.purchasedMovies.addAll(userInput.getPurchasedMovies());
+        this.watchedMovies.addAll(userInput.getWatchedMovies());
+        this.likedMovies.addAll(userInput.getLikedMovies());
+        this.ratedMovies.addAll(userInput.getRatedMovies());
+        this.tokensCount = userInput.getTokensCount();
     }
 
-    public UserInput(CredentialsInput credentials) {
+    public UserInput(final CredentialsInput credentialsInput) {
         this.credentials = new CredentialsInput();
-        this.credentials.setName(credentials.getName());
-        this.credentials.setAccountType(credentials.getAccountType());
-        this.credentials.setBalance(credentials.getBalance());
-        this.credentials.setCountry(credentials.getCountry());
-        this.credentials.setPassword(credentials.getPassword());
-        this.tokensCount = 0;
+        this.credentials.setName(credentialsInput.getName());
+        this.credentials.setAccountType(credentialsInput.getAccountType());
+        this.credentials.setBalance(credentialsInput.getBalance());
+        this.credentials.setCountry(credentialsInput.getCountry());
+        this.credentials.setPassword(credentialsInput.getPassword());
+        this.purchasedMovies = new ArrayList<>();
+        this.watchedMovies = new ArrayList<>();
+        this.likedMovies = new ArrayList<>();
+        this.ratedMovies = new ArrayList<>();
         this.numFreePremiumMovies = 15;
-        this.purchasedMovies = new ArrayList();
-        this.watchedMovies = new ArrayList();
-        this.likedMovies = new ArrayList();
-        this.ratedMovies = new ArrayList();
+        this.tokensCount = 0;
     }
 
     public void resetUser() {
-        this.purchasedMovies = new ArrayList();
-        this.watchedMovies = new ArrayList();
-        this.likedMovies = new ArrayList();
-        this.ratedMovies = new ArrayList();
+        this.credentials = new CredentialsInput();
+        this.purchasedMovies = new ArrayList<>();
+        this.watchedMovies = new ArrayList<>();
+        this.likedMovies = new ArrayList<>();
+        this.ratedMovies = new ArrayList<>();
         this.tokensCount = 0;
         this.numFreePremiumMovies = 15;
     }
@@ -62,7 +63,7 @@ public class UserInput {
         return credentials;
     }
 
-    public void setCredentials(CredentialsInput credentials) {
+    public void setCredentials(final CredentialsInput credentials) {
         this.credentials = credentials;
     }
 
@@ -70,7 +71,7 @@ public class UserInput {
         return purchasedMovies;
     }
 
-    public void setPurchasedMovies(List<MovieInput> purchasedMovies) {
+    public void setPurchasedMovies(final List<MovieInput> purchasedMovies) {
         this.purchasedMovies = purchasedMovies;
     }
 
@@ -78,7 +79,7 @@ public class UserInput {
         return watchedMovies;
     }
 
-    public void setWatchedMovies(List<MovieInput> watchedMovies) {
+    public void setWatchedMovies(final List<MovieInput> watchedMovies) {
         this.watchedMovies = watchedMovies;
     }
 
@@ -86,7 +87,7 @@ public class UserInput {
         return likedMovies;
     }
 
-    public void setLikedMovies(List<MovieInput> likedMovies) {
+    public void setLikedMovies(final List<MovieInput> likedMovies) {
         this.likedMovies = likedMovies;
     }
 
@@ -94,7 +95,7 @@ public class UserInput {
         return ratedMovies;
     }
 
-    public void setRatedMovies(List<MovieInput> ratedMovies) {
+    public void setRatedMovies(final List<MovieInput> ratedMovies) {
         this.ratedMovies = ratedMovies;
     }
 
@@ -102,7 +103,7 @@ public class UserInput {
         return tokensCount;
     }
 
-    public void setTokensCount(int tokensCount) {
+    public void setTokensCount(final int tokensCount) {
         this.tokensCount = tokensCount;
     }
 
@@ -110,20 +111,8 @@ public class UserInput {
         return numFreePremiumMovies;
     }
 
-    public void setNumFreePremiumMovies(int numFreePremiumMovies) {
+    public void setNumFreePremiumMovies(final int numFreePremiumMovies) {
         this.numFreePremiumMovies = numFreePremiumMovies;
     }
 
-    @Override
-    public String toString() {
-        return "UserInput{" +
-                "credentials=" + credentials +
-                ", purchasedMovies=" + purchasedMovies +
-                ", watchedMovies=" + watchedMovies +
-                ", likedMovies=" + likedMovies +
-                ", ratedMovies=" + ratedMovies +
-                ", tokensCount=" + tokensCount +
-                ", numFreePremiumMovies=" + numFreePremiumMovies +
-                '}';
-    }
 }

@@ -12,8 +12,9 @@ public class SortByLikes implements Sort {
 
         if (parameter.equals("increasing")) {
             movies.sort(Comparator.comparingInt(MovieInput::getNumLikes));
+            return;
         }
-        else if (parameter.equals("decreasing")){
+        if (parameter.equals("decreasing")) {
             movies.sort(Comparator.comparingInt(MovieInput::getNumLikes).reversed());
         }
     }

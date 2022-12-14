@@ -1,10 +1,9 @@
 [ {
   "error" : "Error",
-  "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "currentMoviesList" : [ ]
 }, {
   "error" : null,
-  "currentMoviesList" : [ ],
   "currentUser" : {
     "credentials" : {
       "name" : "Ramsi",
@@ -19,17 +18,33 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  }
+  },
+  "currentMoviesList" : [ ]
 }, {
   "error" : "Error",
-  "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "currentMoviesList" : [ ]
 }, {
   "error" : "Error",
-  "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "currentMoviesList" : [ ]
 }, {
   "error" : null,
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Ramsi",
+      "password" : "numiplacevelea",
+      "accountType" : "standard",
+      "country" : "Ireland",
+      "balance" : "300"
+    },
+    "purchasedMovies" : [ ],
+    "watchedMovies" : [ ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15
+  },
   "currentMoviesList" : [ {
     "name" : "John Wick: Chapter 3 - Parabellum",
     "year" : 2019,
@@ -50,7 +65,9 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ],
+  } ]
+}, {
+  "error" : null,
   "currentUser" : {
     "credentials" : {
       "name" : "Ramsi",
@@ -65,10 +82,10 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  }
+  },
+  "currentMoviesList" : [ ]
 }, {
   "error" : null,
-  "currentMoviesList" : [ ],
   "currentUser" : {
     "credentials" : {
       "name" : "Ramsi",
@@ -83,9 +100,7 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  }
-}, {
-  "error" : null,
+  },
   "currentMoviesList" : [ {
     "name" : "John Wick: Chapter 3 - Parabellum",
     "year" : 2019,
@@ -106,29 +121,13 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ],
-  "currentUser" : {
-    "credentials" : {
-      "name" : "Ramsi",
-      "password" : "numiplacevelea",
-      "accountType" : "standard",
-      "country" : "Ireland",
-      "balance" : "300"
-    },
-    "purchasedMovies" : [ ],
-    "watchedMovies" : [ ],
-    "likedMovies" : [ ],
-    "ratedMovies" : [ ],
-    "tokensCount" : 0,
-    "numFreePremiumMovies" : 15
-  }
+  } ]
 }, {
   "error" : "Error",
-  "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "currentMoviesList" : [ ]
 }, {
   "error" : null,
-  "currentMoviesList" : [ ],
   "currentUser" : {
     "credentials" : {
       "name" : "Eduard",
@@ -143,9 +142,25 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  }
+  },
+  "currentMoviesList" : [ ]
 }, {
   "error" : null,
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Eduard",
+      "password" : "secret",
+      "accountType" : "premium",
+      "country" : "Romania",
+      "balance" : "150"
+    },
+    "purchasedMovies" : [ ],
+    "watchedMovies" : [ ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "tokensCount" : 40,
+    "numFreePremiumMovies" : 15
+  },
   "currentMoviesList" : [ {
     "name" : "John Wick: Chapter 3 - Parabellum",
     "year" : 2019,
@@ -166,7 +181,17 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ],
+  } ]
+}, {
+  "error" : "Error",
+  "currentUser" : null,
+  "currentMoviesList" : [ ]
+}, {
+  "error" : "Error",
+  "currentUser" : null,
+  "currentMoviesList" : [ ]
+}, {
+  "error" : null,
   "currentUser" : {
     "credentials" : {
       "name" : "Eduard",
@@ -181,17 +206,7 @@
     "ratedMovies" : [ ],
     "tokensCount" : 40,
     "numFreePremiumMovies" : 15
-  }
-}, {
-  "error" : "Error",
-  "currentMoviesList" : [ ],
-  "currentUser" : null
-}, {
-  "error" : "Error",
-  "currentMoviesList" : [ ],
-  "currentUser" : null
-}, {
-  "error" : null,
+  },
   "currentMoviesList" : [ {
     "name" : "Titanic",
     "year" : 2019,
@@ -202,35 +217,9 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ],
-  "currentUser" : {
-    "credentials" : {
-      "name" : "Eduard",
-      "password" : "secret",
-      "accountType" : "premium",
-      "country" : "Romania",
-      "balance" : "150"
-    },
-    "purchasedMovies" : [ ],
-    "watchedMovies" : [ ],
-    "likedMovies" : [ ],
-    "ratedMovies" : [ ],
-    "tokensCount" : 40,
-    "numFreePremiumMovies" : 15
-  }
+  } ]
 }, {
   "error" : null,
-  "currentMoviesList" : [ {
-    "name" : "Titanic",
-    "year" : 2019,
-    "duration" : 131,
-    "genres" : [ "Action", "Thriller", "Crime" ],
-    "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
-    "countriesBanned" : [ "Russia" ],
-    "numLikes" : 0,
-    "rating" : 0.0,
-    "numRatings" : 0
-  } ],
   "currentUser" : {
     "credentials" : {
       "name" : "Eduard",
@@ -255,9 +244,7 @@
     "ratedMovies" : [ ],
     "tokensCount" : 40,
     "numFreePremiumMovies" : 14
-  }
-}, {
-  "error" : null,
+  },
   "currentMoviesList" : [ {
     "name" : "Titanic",
     "year" : 2019,
@@ -268,7 +255,9 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ],
+  } ]
+}, {
+  "error" : null,
   "currentUser" : {
     "credentials" : {
       "name" : "Eduard",
@@ -303,9 +292,7 @@
     "ratedMovies" : [ ],
     "tokensCount" : 40,
     "numFreePremiumMovies" : 14
-  }
-}, {
-  "error" : null,
+  },
   "currentMoviesList" : [ {
     "name" : "Titanic",
     "year" : 2019,
@@ -313,10 +300,12 @@
     "genres" : [ "Action", "Thriller", "Crime" ],
     "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
     "countriesBanned" : [ "Russia" ],
-    "numLikes" : 1,
+    "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ],
+  } ]
+}, {
+  "error" : null,
   "currentUser" : {
     "credentials" : {
       "name" : "Eduard",
@@ -361,9 +350,65 @@
     "ratedMovies" : [ ],
     "tokensCount" : 40,
     "numFreePremiumMovies" : 14
-  }
+  },
+  "currentMoviesList" : [ {
+    "name" : "Titanic",
+    "year" : 2019,
+    "duration" : 131,
+    "genres" : [ "Action", "Thriller", "Crime" ],
+    "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+    "countriesBanned" : [ "Russia" ],
+    "numLikes" : 1,
+    "rating" : 0.0,
+    "numRatings" : 0
+  } ]
 }, {
   "error" : null,
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Eduard",
+      "password" : "secret",
+      "accountType" : "premium",
+      "country" : "Romania",
+      "balance" : "150"
+    },
+    "purchasedMovies" : [ {
+      "name" : "Titanic",
+      "year" : 2019,
+      "duration" : 131,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ],
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0
+    } ],
+    "watchedMovies" : [ {
+      "name" : "Titanic",
+      "year" : 2019,
+      "duration" : 131,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ],
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0
+    } ],
+    "likedMovies" : [ {
+      "name" : "Titanic",
+      "year" : 2019,
+      "duration" : 131,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ],
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0
+    } ],
+    "ratedMovies" : [ ],
+    "tokensCount" : 40,
+    "numFreePremiumMovies" : 14
+  },
   "currentMoviesList" : [ {
     "name" : "John Wick: Chapter 3 - Parabellum",
     "year" : 2019,
@@ -384,7 +429,9 @@
     "numLikes" : 1,
     "rating" : 0.0,
     "numRatings" : 0
-  } ],
+  } ]
+}, {
+  "error" : null,
   "currentUser" : {
     "credentials" : {
       "name" : "Eduard",
@@ -429,9 +476,7 @@
     "ratedMovies" : [ ],
     "tokensCount" : 40,
     "numFreePremiumMovies" : 14
-  }
-}, {
-  "error" : null,
+  },
   "currentMoviesList" : [ {
     "name" : "John Wick: Chapter 3 - Parabellum",
     "year" : 2019,
@@ -442,70 +487,25 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ],
-  "currentUser" : {
-    "credentials" : {
-      "name" : "Eduard",
-      "password" : "secret",
-      "accountType" : "premium",
-      "country" : "Romania",
-      "balance" : "150"
-    },
-    "purchasedMovies" : [ {
-      "name" : "Titanic",
-      "year" : 2019,
-      "duration" : 131,
-      "genres" : [ "Action", "Thriller", "Crime" ],
-      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
-      "countriesBanned" : [ "Russia" ],
-      "numLikes" : 1,
-      "rating" : 0.0,
-      "numRatings" : 0
-    } ],
-    "watchedMovies" : [ {
-      "name" : "Titanic",
-      "year" : 2019,
-      "duration" : 131,
-      "genres" : [ "Action", "Thriller", "Crime" ],
-      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
-      "countriesBanned" : [ "Russia" ],
-      "numLikes" : 1,
-      "rating" : 0.0,
-      "numRatings" : 0
-    } ],
-    "likedMovies" : [ {
-      "name" : "Titanic",
-      "year" : 2019,
-      "duration" : 131,
-      "genres" : [ "Action", "Thriller", "Crime" ],
-      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
-      "countriesBanned" : [ "Russia" ],
-      "numLikes" : 1,
-      "rating" : 0.0,
-      "numRatings" : 0
-    } ],
-    "ratedMovies" : [ ],
-    "tokensCount" : 40,
-    "numFreePremiumMovies" : 14
-  }
+  } ]
 }, {
   "error" : "Error",
-  "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "currentMoviesList" : [ ]
 }, {
   "error" : "Error",
-  "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "currentMoviesList" : [ ]
 }, {
   "error" : "Error",
-  "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "currentMoviesList" : [ ]
 }, {
   "error" : "Error",
-  "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "currentMoviesList" : [ ]
 }, {
   "error" : "Error",
-  "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "currentMoviesList" : [ ]
 } ]

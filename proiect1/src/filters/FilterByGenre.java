@@ -4,11 +4,10 @@ import input.MovieInput;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class FilterByGenre implements Filter {
     @Override
-    public List<MovieInput> run(List<MovieInput> movies, List<String> content) {
+    public List<MovieInput> run(final List<MovieInput> movies, final List<String> content) {
         List<MovieInput> result = new ArrayList<>();
         for (MovieInput movie : movies) {
             boolean containsGenres = true;

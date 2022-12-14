@@ -1,17 +1,18 @@
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 import commands.HomepageSetter;
-import input.Input;
-import commands.CommandParser;
-import input.MovieInput;
-import input.UserInput;
 import momentaryInstances.PageNow;
+import commands.CommandParser;
+import input.Input;
+import input.UserInput;
+import input.MovieInput;
 import output.Output;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
 
 public class Main {
+
 
     public static void main(String[] args) throws IOException {
         // initialise mapper
@@ -24,7 +25,9 @@ public class Main {
         String outputFile = "./checker/resources/out/basic_" + numberOnly + ".json";
         // create output dir
         File file = new File(outputFile);
-        file.getParentFile().mkdirs();
+        boolean resCode = file.getParentFile().mkdirs();
+        if (resCode)
+            return;
 
         // parse input for given test
         Input programInput = objectMapper.readValue(new File(args[0]), Input.class);
@@ -33,7 +36,7 @@ public class Main {
         Output programOutput = new Output();
 
         // set homepage
-        PageNow pageNow = HomepageSetter.run(programInput);
+        PageNow pageNow = HomepageSetter.run();
 
         // differentiate commands and begin program ENTRY POINT
         CommandParser.parse(programInput, pageNow, programOutput);
@@ -48,6 +51,6 @@ public class Main {
 
         // reset input
         programInput.getUsers().forEach(UserInput::resetUser);
-        programInput.getMovies().forEach(MovieInput::resetMovies);
+        programInput.getMovies().forEach(MovieInput::resetMovie);
     }
 }

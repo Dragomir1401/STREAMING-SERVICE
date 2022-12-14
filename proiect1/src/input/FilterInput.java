@@ -10,7 +10,7 @@ public class FilterInput {
         return sort;
     }
 
-    public void setSort(SortInput sort) {
+    public void setSort(final SortInput sort) {
         this.sort = sort;
     }
 
@@ -18,15 +18,8 @@ public class FilterInput {
         return contains;
     }
 
-    public void setContains(Contains movieSpecs) {
+    public void setContains(final Contains movieSpecs) {
         this.contains = movieSpecs;
     }
 
-    @Override
-    public String toString() {
-        return "FilterInput{" +
-                "sort=" + sort +
-                ", contains=" + contains +
-                '}';
-    }
 }

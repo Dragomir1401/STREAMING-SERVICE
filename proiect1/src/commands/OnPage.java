@@ -3,20 +3,16 @@ package commands;
 import filters.*;
 import input.*;
 import momentaryInstances.PageNow;
-import momentaryInstances.UserNow;
 import output.CommandOutput;
 import output.Output;
-import sorters.Sort;
 import sorters.SortByDuration;
 import sorters.SortByRating;
-
-import java.io.ObjectOutput;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class OnPage {
-    public static void run(Input input, PageNow pageNow, ActionInput action, Output output) {
+    public static void run(final Input input, final PageNow pageNow, final ActionInput action, final Output output) {
         if (action.getFeature() != null) {
             switch (action.getFeature()) {
                 case "register" -> register(input, pageNow, action, output);
@@ -24,7 +20,7 @@ public class OnPage {
                 case "search" -> search(input, pageNow, action, output);
                 case "filter" -> filter(input, pageNow, action, output);
                 case "buy tokens" -> buyTokens(pageNow, action, output);
-                case "buy premium account" -> buyPremiumAccount(pageNow, action, output);
+                case "buy premium account" -> buyPremiumAccount(pageNow, output);
                 case "purchase" -> purchaseMovie(input, pageNow, action, output);
                 case "watch" -> watchMovie(pageNow, action, output);
                 case "like" -> likeMovie(input, pageNow, action, output);
@@ -34,7 +30,7 @@ public class OnPage {
         }
     }
 
-    private static void register(Input input, PageNow pageNow, ActionInput action, Output output) {
+    private static void register(final Input input, final PageNow pageNow, final ActionInput action, final Output output) {
         // if page is register and another user is not registered already
         if (pageNow.getName().equals("register") && pageNow.getUser().getUser() == null &&
                 !pageNow.getUserCommands().userExists(input, action)) {
@@ -56,7 +52,7 @@ public class OnPage {
         output.getOutput().add(new CommandOutput());
     }
 
-    private static void login(Input input, PageNow pageNow, ActionInput action, Output output) {
+    private static void login(final Input input, final PageNow pageNow, final ActionInput action, final Output output) {
         // if page is not login or user is already logged or user is not in input base
         if (pageNow.getName().equals("login") && pageNow.getUser().getUser() == null &&
                 pageNow.getUserCommands().userExists(input, action)) {
@@ -76,7 +72,7 @@ public class OnPage {
         output.getOutput().add(new CommandOutput());
     }
 
-    private static void search(Input input, PageNow pageNow, ActionInput action, Output output) {
+    private static void search(final Input input, final PageNow pageNow, final ActionInput action, final Output output) {
         // check to see if we are on movies page
         if (pageNow.getName().equals("movies")) {
             // initialise filters
@@ -99,7 +95,7 @@ public class OnPage {
 
     }
 
-    private static void filter(Input input, PageNow pageNow, ActionInput action, Output output) {
+    private static void filter(final Input input, final PageNow pageNow, final ActionInput action, final Output output) {
         if (pageNow.getName().equals("movies")) {
             // initialise filter
             FilterByCountry filterByCountry = new FilterByCountry();
@@ -160,7 +156,7 @@ public class OnPage {
         output.getOutput().add(new CommandOutput());
     }
 
-    private static void buyTokens(PageNow pageNow, ActionInput action, Output output) {
+    private static void buyTokens(final PageNow pageNow, final ActionInput action, final Output output) {
         // check to see if we are on correct page
         if (pageNow.getName().equals("upgrades")) {
             pageNow.getTokensCommands().buyTokens(pageNow.getUser().getUser(), action, output);
@@ -170,17 +166,17 @@ public class OnPage {
         output.getOutput().add(new CommandOutput());
     }
 
-    private static void buyPremiumAccount(PageNow pageNow, ActionInput actionInput, Output output) {
+    private static void buyPremiumAccount(final PageNow pageNow, final Output output) {
         // check to see if we are on correct page
         if (pageNow.getName().equals("upgrades")) {
-            pageNow.getTokensCommands().buyPremiumAccount(pageNow.getUser().getUser(), actionInput, output);
+            pageNow.getTokensCommands().buyPremiumAccount(pageNow.getUser().getUser(), output);
             return;
         }
         // error case
         output.getOutput().add(new CommandOutput());
     }
 
-    private static void purchaseMovie(Input input, PageNow pageNow, ActionInput actionInput, Output output) {
+    private static void purchaseMovie(final Input input, final PageNow pageNow, final ActionInput actionInput, final Output output) {
         // check to see if we are on correct page
         if (pageNow.getName().equals("see details") || pageNow.getName().equals("upgrades")) {
             pageNow.getMoviesCommands().purchaseMovie(input, output, pageNow, actionInput);
@@ -190,7 +186,7 @@ public class OnPage {
         output.getOutput().add(new CommandOutput());
     }
 
-    private static void watchMovie(PageNow pageNow, ActionInput actionInput, Output output) {
+    private static void watchMovie(final PageNow pageNow, final ActionInput actionInput, final Output output) {
         // check to see if we are on correct page
         if (pageNow.getName().equals("see details") || pageNow.getName().equals("upgrades")) {
             pageNow.getMoviesCommands().watchMovie(pageNow, output, actionInput);
@@ -200,7 +196,7 @@ public class OnPage {
         output.getOutput().add(new CommandOutput());
     }
 
-    private static void likeMovie(Input input, PageNow pageNow, ActionInput actionInput, Output output) {
+    private static void likeMovie(final Input input, final PageNow pageNow, final ActionInput actionInput, final Output output) {
         // check to see if we are on correct page
         if (pageNow.getName().equals("see details") || pageNow.getName().equals("upgrades")) {
             pageNow.getMoviesCommands().likeMovie(input, pageNow, output, actionInput);
@@ -211,7 +207,7 @@ public class OnPage {
 
     }
 
-    private static void rateMovie(Input input, PageNow pageNow, ActionInput actionInput, Output output) {
+    private static void rateMovie(final Input input, final PageNow pageNow, final ActionInput actionInput, final Output output) {
         // check to see if we are on correct page
         if (pageNow.getName().equals("see details") || pageNow.getName().equals("upgrades")) {
             pageNow.getMoviesCommands().rateMovie(input, pageNow, output, actionInput);

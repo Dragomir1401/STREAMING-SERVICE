@@ -3,23 +3,22 @@ package momentaryInstances;
 import commands.MovieCommands;
 import commands.TokenCommands;
 import commands.UserCommands;
-import input.Input;
 import input.MovieInput;
 
 import java.util.List;
 
 public class PageNow {
-    private UserNow user;
+    private final UserNow user;
     private String name;
-    private UserCommands userCommands;
-    private TokenCommands tokensCommands;
-    private MovieCommands moviesCommands;
+    private final UserCommands userCommands;
+    private final TokenCommands tokensCommands;
+    private final MovieCommands moviesCommands;
     private List<MovieInput> movieList;
     private MovieInput movie;
 
-    public PageNow(UserNow user, String name, UserCommands userCommands,
-                   TokenCommands tokensCommands, MovieCommands moviesActions,
-                   Input input, List<MovieInput> movieInputList, MovieInput movieInput) {
+    public PageNow(final UserNow user, final String name, final UserCommands userCommands,
+                   final TokenCommands tokensCommands, final MovieCommands moviesActions,
+                   final List<MovieInput> movieInputList, final MovieInput movieInput) {
         this.user = user;
         this.name = name;
         this.userCommands = userCommands;
@@ -29,27 +28,25 @@ public class PageNow {
         this.movie = movieInput;
     }
 
-    public PageNow(String name, Input input) {
+    public PageNow(final String name) {
         this.user = UserNow.getInstance();
         this.name = name;
         this.userCommands = UserCommands.getInstance();
         this.tokensCommands = TokenCommands.getInstance();
         this.moviesCommands = MovieCommands.getInstance();
+        this.movieList = null;
+        this.movie = null;
     }
 
     public UserNow getUser() {
         return user;
     }
 
-    public void setUser(UserNow user) {
-        this.user = user;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -57,31 +54,19 @@ public class PageNow {
         return userCommands;
     }
 
-    public void setUserCommands(UserCommands userCommands) {
-        this.userCommands = userCommands;
-    }
-
     public TokenCommands getTokensCommands() {
         return tokensCommands;
-    }
-
-    public void setTokensCommands(TokenCommands tokensCommands) {
-        this.tokensCommands = tokensCommands;
     }
 
     public MovieCommands getMoviesCommands() {
         return moviesCommands;
     }
 
-    public void setMoviesCommands(MovieCommands moviesActions) {
-        this.moviesCommands = moviesActions;
-    }
-
     public List<MovieInput> getMovieList() {
         return movieList;
     }
 
-    public void setMovieList(List<MovieInput> movieInputList) {
+    public void setMovieList(final List<MovieInput> movieInputList) {
         this.movieList = movieInputList;
     }
 
@@ -89,7 +74,7 @@ public class PageNow {
         return movie;
     }
 
-    public void setMovie(MovieInput movieInput) {
+    public void setMovie(final MovieInput movieInput) {
         this.movie = movieInput;
     }
 }

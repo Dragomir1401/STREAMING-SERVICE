@@ -9,59 +9,50 @@ import java.util.List;
 
 public class CommandOutput {
     private String error;
-    private List<MovieInput> currentMoviesList;
-    private UserInput currentUser;
+    private List<MovieInput> moviesList;
+    private UserInput user;
 
     public CommandOutput() {
         this.error = "Error";
-        this.currentMoviesList = new ArrayList();
+        this.moviesList = new ArrayList<>();
     }
 
-    public CommandOutput(List<MovieInput> currentMoviesList, UserInput currentUser) {
-        this.currentMoviesList = new ArrayList<>();
-        if (currentMoviesList != null) {
-            for (MovieInput movie : currentMoviesList) {
-                this.currentMoviesList.add(new MovieInput(movie));
+    public CommandOutput(final List<MovieInput> moviesList, final UserInput user) {
+        this.moviesList = new ArrayList<>();
+        if (moviesList != null) {
+            for (MovieInput movie : moviesList) {
+                this.moviesList.add(new MovieInput(movie));
             }
         }
-        this.currentUser = new UserInput(currentUser);
+        this.user = new UserInput(user);
     }
 
-    public CommandOutput(MovieInput movie, UserInput currentUser) {
-        this.currentUser = new UserInput(currentUser);
-        this.currentMoviesList = Collections.singletonList(new MovieInput(movie));
+    public CommandOutput(final MovieInput movie, final UserInput user) {
+        this.user = new UserInput(user);
+        this.moviesList = Collections.singletonList(new MovieInput(movie));
     }
 
     public String getError() {
         return error;
     }
 
-    public void setError(String error) {
+    public void setError(final String error) {
         this.error = error;
     }
 
     public List<MovieInput> getCurrentMoviesList() {
-        return currentMoviesList;
+        return moviesList;
     }
 
-    public void setCurrentMoviesList(List<MovieInput> currentMoviesList) {
-        this.currentMoviesList = currentMoviesList;
+    public void setCurrentMoviesList(final List<MovieInput> moviesList) {
+        this.moviesList = moviesList;
     }
 
     public UserInput getCurrentUser() {
-        return currentUser;
+        return user;
     }
 
-    public void setCurrentUser(UserInput currentUser) {
-        this.currentUser = currentUser;
-    }
-
-    @Override
-    public String toString() {
-        return "CommandOutput{" +
-                "error='" + error + '\'' +
-                ", currentMoviesList=" + currentMoviesList +
-                ", currentUser=" + currentUser +
-                '}';
+    public void setCurrentUser(final UserInput user) {
+        this.user = user;
     }
 }

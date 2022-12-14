@@ -1,9 +1,7 @@
 package sorters;
 
 import input.MovieInput;
-
 import java.util.Comparator;
-import java.util.Date;
 import java.util.List;
 
 public class SortByRating implements Sort {
@@ -12,8 +10,9 @@ public class SortByRating implements Sort {
 
         if (parameter.equals("increasing")) {
             movies.sort(Comparator.comparingDouble(MovieInput::getRating));
+            return;
         }
-        else if (parameter.equals("decreasing")){
+        if (parameter.equals("decreasing")){
             movies.sort(Comparator.comparingDouble(MovieInput::getRating).reversed());
         }
     }
@@ -28,8 +27,10 @@ public class SortByRating implements Sort {
                     cmp = Double.compare(o1.getRating(), o2.getRating());
                 return cmp;
             });
+            return;
         }
-        else if (parameter.equals("decreasing")){
+
+        if (parameter.equals("decreasing")){
             movies.sort((o1, o2) -> {
                 int cmp = o1.getDuration() - o2.getDuration();
                 if (cmp != 0)

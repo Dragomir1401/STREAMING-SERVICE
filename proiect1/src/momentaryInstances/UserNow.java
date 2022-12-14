@@ -18,11 +18,8 @@ public class UserNow {
         return user;
     }
 
-    public void setUser(UserInput user) {
+    public void setUser(final UserInput user) {
         this.user = user;
     }
 
-    public static void setInstance(UserNow instance) {
-        UserNow.instance = instance;
-    }
 }

@@ -1,6 +1,5 @@
 package commands;
 
-import filters.Filter;
 import filters.FilterByCountry;
 import input.ActionInput;
 import input.Input;
@@ -13,7 +12,7 @@ import java.util.List;
 
 
 public class ChangePage {
-    public static void run(Input input, PageNow pageNow, ActionInput action, Output output) {
+    public static void run(final Input input, final PageNow pageNow, final ActionInput action, final Output output) {
         boolean inHomepage = pageNow.getName().equals("homepage");
         // switch to log in or register not possible if current page is not homepage
         switch (action.getPage()) {
@@ -47,8 +46,7 @@ public class ChangePage {
                 break;
             case "movies":
                 if (pageNow.getUser().getUser() != null) {
-                    setPageNow(pageNow, "movies", input.getMovies(), new FilterByCountry());
-                    output.getOutput().add(new CommandOutput(pageNow.getMovieList(), pageNow.getUser().getUser()));
+                    setPageNow(pageNow, input.getMovies(), new FilterByCountry(), output);
                 } else {
                     output.getOutput().add(new CommandOutput());
                 }
@@ -56,7 +54,7 @@ public class ChangePage {
             case "see details":
                 if (pageNow.getName().equals("movies") &&
                         pageNow.getMoviesCommands().findMovieInstance(pageNow.getMovieList(), action.getMovie()) != null) {
-                    setPageNow(pageNow, "see details", pageNow.getMoviesCommands().findMovieInstance(pageNow.getMovieList(),
+                    setPageNow(pageNow, pageNow.getMoviesCommands().findMovieInstance(pageNow.getMovieList(),
                             action.getMovie()), output);
                 } else {
                     output.getOutput().add(new CommandOutput());
@@ -78,15 +76,16 @@ public class ChangePage {
         }
     }
 
-    private static void setPageNow(PageNow pageNow, String name, List<MovieInput> movieList,
-                                   FilterByCountry filterByCountry) {
-        pageNow.setName(name);
+    private static void setPageNow(PageNow pageNow, List<MovieInput> movieList,
+                                   FilterByCountry filterByCountry, Output output) {
+        pageNow.setName("movies");
         pageNow.setMovie(null);
         pageNow.setMovieList(filterByCountry.filter(movieList, pageNow.getUser().getUser()));
+        output.getOutput().add(new CommandOutput(pageNow.getMovieList(), pageNow.getUser().getUser()));
     }
 
-    private static void setPageNow(PageNow pageNow, String name, MovieInput movieInput, Output output) {
-        pageNow.setName(name);
+    private static void setPageNow(PageNow pageNow, MovieInput movieInput, Output output) {
+        pageNow.setName("see details");
         pageNow.setMovie(new MovieInput(movieInput));
         pageNow.getMoviesCommands().getMovieDetails(movieInput, output, pageNow.getUser().getUser(), pageNow);
     }
