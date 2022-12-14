@@ -19,7 +19,7 @@ public class UserCommands {
         return instance;
     }
 
-    public boolean userExists(Input input, ActionInput actionInput) {
+    public boolean userExists(final Input input, final ActionInput actionInput) {
         // user with the same name exists
         for (UserInput userInput : input.getUsers()) {
             if (userInput.getCredentials().getName().equals(actionInput.getCredentials().getName()))
@@ -28,19 +28,17 @@ public class UserCommands {
         return false;
     }
 
-    public boolean checkCredentials(Input input, ActionInput actionInput) {
+    public boolean checkCredentials(final Input input, final ActionInput actionInput) {
         // check login credentials
         for (UserInput userInput : input.getUsers()) {
             if (userInput.getCredentials().getName().equals(actionInput.getCredentials().getName())) {
-                if (userInput.getCredentials().getPassword().equals(actionInput.getCredentials().getPassword()))
-                    return true;
-                return false;
+                return userInput.getCredentials().getPassword().equals(actionInput.getCredentials().getPassword());
             }
         }
         return false;
     }
 
-    public UserInput findUserInDatabase(Input input, ActionInput actionInput) {
+    public UserInput findUserInDatabase(final Input input, final ActionInput actionInput) {
         // finds user instance in input database
         for (UserInput userInput : input.getUsers()) {
             if (userInput.getCredentials().getName().equals(actionInput.getCredentials().getName()))
@@ -49,7 +47,7 @@ public class UserCommands {
         return null;
     }
 
-    public boolean userCanSeeMovie(UserInput userInput, MovieInput movieInput) {
+    public boolean userCanSeeMovie(final UserInput userInput, final MovieInput movieInput) {
         for (String country : movieInput.getCountriesBanned()) {
             if (userInput.getCredentials().getCountry().equals(country))
                 return false;

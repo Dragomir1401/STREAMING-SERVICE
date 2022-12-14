@@ -12,8 +12,9 @@ public class SortByDuration implements Sort {
 
         if (parameter.equals("increasing")) {
             movies.sort(Comparator.comparingInt(MovieInput::getDuration));
+            return;
         }
-        else if (parameter.equals("decreasing")){
+        if (parameter.equals("decreasing")) {
             movies.sort(Comparator.comparingInt(MovieInput::getDuration).reversed());
         }
     }

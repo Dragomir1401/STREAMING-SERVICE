@@ -9,13 +9,13 @@ public class ActionInput {
     private FilterInput filters;
     private int rate;
     private String movie;
-    private int count;
+    private  int count;
 
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(final String type) {
         this.type = type;
     }
 
@@ -23,7 +23,7 @@ public class ActionInput {
         return page;
     }
 
-    public void setPage(String page) {
+    public void setPage(final String page) {
         this.page = page;
     }
 
@@ -31,7 +31,7 @@ public class ActionInput {
         return feature;
     }
 
-    public void setFeature(String feature) {
+    public void setFeature(final String feature) {
         this.feature = feature;
     }
 
@@ -39,16 +39,12 @@ public class ActionInput {
         return credentials;
     }
 
-    public void setCredentials(CredentialsInput credentials) {
+    public void setCredentials(final CredentialsInput credentials) {
         this.credentials = credentials;
     }
 
     public String getStartsWith() {
         return startsWith;
-    }
-
-    public void setStartsWith(String startsWith) {
-        this.startsWith = startsWith;
     }
 
     public FilterInput getFilters() {
@@ -63,15 +59,11 @@ public class ActionInput {
         return rate;
     }
 
-    public void setRate(int movieRate) {
-        this.rate = movieRate;
-    }
-
     public String getMovie() {
         return movie;
     }
 
-    public void setMovie(String movie) {
+    public void setMovie(final String movie) {
         this.movie = movie;
     }
 
@@ -79,22 +71,5 @@ public class ActionInput {
         return count;
     }
 
-    public void setCount(int count) {
-        this.count = count;
-    }
 
-    @Override
-    public String toString() {
-        return "ActionInput{" +
-                "type='" + type + '\'' +
-                ", page='" + page + '\'' +
-                ", feature='" + feature + '\'' +
-                ", credentials=" + credentials +
-                ", startsWith='" + startsWith + '\'' +
-                ", filters=" + filters +
-                ", rate=" + rate +
-                ", movie='" + movie + '\'' +
-                ", count=" + count +
-                '}';
-    }
 }

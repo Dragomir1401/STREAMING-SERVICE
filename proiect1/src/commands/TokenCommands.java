@@ -1,7 +1,6 @@
 package commands;
 
 import input.ActionInput;
-import input.Input;
 import input.UserInput;
 import output.CommandOutput;
 import output.Output;
@@ -17,20 +16,20 @@ public class TokenCommands {
         return instance;
     }
 
-    public void buyTokens(UserInput userInput, ActionInput actionInput, Output output) {
+    public void buyTokens(final UserInput userInput, final ActionInput actionInput, final Output output) {
         // case for not enough tokens
         if (actionInput.getCount() > Integer.parseInt(userInput.getCredentials().getBalance())) {
             output.getOutput().add(new CommandOutput());
             return;
         }
         // buy tokens action
-        Integer balance = Integer.parseInt(userInput.getCredentials().getBalance());
+        int balance = Integer.parseInt(userInput.getCredentials().getBalance());
         balance -= actionInput.getCount();
-        userInput.getCredentials().setBalance(balance.toString());
+        userInput.getCredentials().setBalance(Integer.toString(balance));
         userInput.setTokensCount(userInput.getTokensCount() + actionInput.getCount());
     }
 
-    public void buyPremiumAccount(UserInput userInput, ActionInput actionInput, Output output) {
+    public void buyPremiumAccount(final UserInput userInput, final Output output) {
         // case for not enough tokens
         if (10 > userInput.getTokensCount()) {
             output.getOutput().add(new CommandOutput());

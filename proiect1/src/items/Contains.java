@@ -10,7 +10,7 @@ public class Contains {
         return actors;
     }
 
-    public void setActors(List<String> actors) {
+    public void setActors(final List<String> actors) {
         this.actors = actors;
     }
 
@@ -26,7 +26,7 @@ public class Contains {
         return country;
     }
 
-    public void setCountry(List<String> country) {
+    public void setCountry(final List<String> country) {
         this.country = country;
     }
 }

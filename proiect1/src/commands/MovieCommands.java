@@ -9,10 +9,7 @@ import momentaryInstances.PageNow;
 import output.CommandOutput;
 import output.Output;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
-import java.util.Formatter;
 import java.util.List;
 
 public class MovieCommands {
@@ -26,7 +23,7 @@ public class MovieCommands {
         return instance;
     }
 
-    public MovieInput findMovieInstance(List<MovieInput> movies, String movieName) {
+    public MovieInput findMovieInstance(final List<MovieInput> movies, final String movieName) {
         for (MovieInput movie : movies) {
             if (movie.getName().equals(movieName))
                 return movie;
@@ -34,7 +31,7 @@ public class MovieCommands {
         return null;
     }
 
-    public int findMovieIndex(List<MovieInput> movies, String movieName) {
+    public int findMovieIndex(final List<MovieInput> movies, final String movieName) {
         int index = 0;
         for (MovieInput movie : movies) {
             if (movie.getName().equals(movieName))
@@ -44,7 +41,7 @@ public class MovieCommands {
         return -1;
     }
 
-    public void getMovieDetails(MovieInput movieInput, Output output, UserInput user, PageNow pageNow) {
+    public void getMovieDetails(final MovieInput movieInput, final Output output, final UserInput user, final PageNow pageNow) {
 
         if (movieInput != null && pageNow.getUserCommands().userCanSeeMovie(user, movieInput)) {
             output.getOutput().add(new CommandOutput(new MovieInput(movieInput), user));
@@ -54,7 +51,7 @@ public class MovieCommands {
         output.getOutput().add(new CommandOutput());
     }
 
-    public void purchaseMovie(Input input, Output output, PageNow pageNow, ActionInput actionInput) {
+    public void purchaseMovie(final Input input, final Output output, final PageNow pageNow, final ActionInput actionInput) {
         // check to see if user has already purchased movie
         for (MovieInput movieInput : pageNow.getUser().getUser().getPurchasedMovies()) {
             if (movieInput.getName().equals(actionInput.getMovie())) {
@@ -103,7 +100,7 @@ public class MovieCommands {
         }
     }
 
-    public void purchaseMovieStandardAccount(PageNow pageNow, Output output, MovieInput movie) {
+    public void purchaseMovieStandardAccount(final PageNow pageNow, final Output output, final MovieInput movie) {
         // case for standard account buy with tokens
         if (pageNow.getUser().getUser().getTokensCount() < 2) {
             // not enough tokens
@@ -118,7 +115,7 @@ public class MovieCommands {
         output.getOutput().add(new CommandOutput(new MovieInput(movie), pageNow.getUser().getUser()));
     }
 
-    public void watchMovie(PageNow pageNow, Output output, ActionInput actionInput) {
+    public void watchMovie(final PageNow pageNow, final Output output, final ActionInput actionInput) {
         // check to see if movie is in purchased movies
         MovieInput movieInstance = null;
         if (pageNow.getName().equals("upgrades")) {
@@ -139,7 +136,7 @@ public class MovieCommands {
         output.getOutput().add(new CommandOutput(new MovieInput(movie), pageNow.getUser().getUser()));
     }
 
-    public void likeMovie(Input input, PageNow pageNow, Output output, ActionInput actionInput) {
+    public void likeMovie(final Input input, final PageNow pageNow, final Output output, final ActionInput actionInput) {
         // check to see if movie is in watched movies
         MovieInput movieInstance = findMovieInstanceForEdgeCase(pageNow, actionInput);
         if (movieInstance == null) {
@@ -159,7 +156,7 @@ public class MovieCommands {
         output.getOutput().add(new CommandOutput(new MovieInput(movie), pageNow.getUser().getUser()));
     }
 
-    public void rateMovie(Input input, PageNow pageNow, Output output, ActionInput actionInput) {
+    public void rateMovie(final Input input, final PageNow pageNow, final Output output, final ActionInput actionInput) {
         // check to see if movie is in watched movies
         MovieInput movieInstance = findMovieInstanceForEdgeCase(pageNow, actionInput);
         if (movieInstance == null || actionInput.getRate() > 5 || actionInput.getRate() < 1) {
@@ -176,7 +173,7 @@ public class MovieCommands {
         pageNow.getUser().getUser().getRatedMovies().add(new MovieInput(movie));
 
         // create rating for movie
-        double rating = 0.00;
+        double rating;
 
         double sum = 0.00;
         for (UserInput userInput : input.getUsers()) {
@@ -192,7 +189,7 @@ public class MovieCommands {
         rating = sum / (double) movie.getNumRatings();
 
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
-        Double rating1 = Double.parseDouble(decimalFormat.format(rating));
+        double rating1 = Double.parseDouble(decimalFormat.format(rating));
 
         // set rating
         movie.setRating(rating1);

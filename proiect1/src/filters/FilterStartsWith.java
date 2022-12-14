@@ -8,7 +8,7 @@ import java.util.List;
 public class FilterStartsWith implements Filter {
 
     @Override
-    public List<MovieInput> run(List<MovieInput> movies, List<String> content) {
+    public List<MovieInput> run(final List<MovieInput> movies, final List<String> content) {
         List<MovieInput> result = new ArrayList<>();
         // content[0] contains startsWith parameter
         for (MovieInput movie : movies) {
