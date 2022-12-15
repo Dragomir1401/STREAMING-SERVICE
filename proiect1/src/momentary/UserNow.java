@@ -1,4 +1,4 @@
-package momentaries;
+package momentary;
 import input.UserInput;
 
 public class UserNow {

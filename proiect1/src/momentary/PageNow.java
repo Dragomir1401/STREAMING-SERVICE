@@ -1,4 +1,4 @@
-package momentaries;
+package momentary;
 
 import commands.MovieCommands;
 import commands.TokenCommands;
