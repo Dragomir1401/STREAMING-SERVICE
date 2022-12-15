@@ -1,25 +1,34 @@
 package input;
 
-import items.Contains;
-
 public class FilterInput {
     private SortInput sort;
-    private Contains contains;
+    private ContainsInput contains;
 
+
+    /**
+     * getter for sort
+     * @return - sort
+     */
     public SortInput getSort() {
         return sort;
     }
 
+
+    /**
+     * setter for sort
+     * @param sort - sort
+     */
     public void setSort(final SortInput sort) {
         this.sort = sort;
     }
 
-    public Contains getContains() {
-        return contains;
-    }
 
-    public void setContains(final Contains movieSpecs) {
-        this.contains = movieSpecs;
+    /**
+     * setter for sort
+     * @return - sort
+     */
+    public ContainsInput getContains() {
+        return contains;
     }
 
 }

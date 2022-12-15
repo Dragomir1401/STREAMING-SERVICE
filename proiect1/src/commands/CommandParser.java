@@ -2,11 +2,21 @@ package commands;
 
 import input.ActionInput;
 import input.Input;
-import momentaryInstances.PageNow;
+import momentaries.PageNow;
 import output.Output;
 
 
-public class CommandParser {
+public final class CommandParser {
+    private CommandParser() {
+
+    }
+
+    /**
+     * parses type of commands in change page and on page
+     * @param input - given input
+     * @param pageNow - current page
+     * @param output - output structure
+     */
     public static void parse(final Input input, final PageNow pageNow, final Output output) {
         for (ActionInput action : input.getActions()) {
             switch (action.getType()) {

@@ -1,5 +1,6 @@
 [ {
   "error" : null,
+  "currentMoviesList" : [ ],
   "currentUser" : {
     "credentials" : {
       "name" : "Ramsi",
@@ -14,14 +15,14 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  },
-  "currentMoviesList" : [ ]
+  }
 }, {
   "error" : "Error",
-  "currentUser" : null,
-  "currentMoviesList" : [ ]
+  "currentMoviesList" : [ ],
+  "currentUser" : null
 }, {
   "error" : null,
+  "currentMoviesList" : [ ],
   "currentUser" : {
     "credentials" : {
       "name" : "Mihail",
@@ -36,10 +37,10 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  },
-  "currentMoviesList" : [ ]
+  }
 }, {
   "error" : null,
+  "currentMoviesList" : [ ],
   "currentUser" : {
     "credentials" : {
       "name" : "Mihail",
@@ -54,10 +55,10 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  },
-  "currentMoviesList" : [ ]
+  }
 }, {
   "error" : null,
+  "currentMoviesList" : [ ],
   "currentUser" : {
     "credentials" : {
       "name" : "Mihail",
@@ -72,6 +73,5 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  },
-  "currentMoviesList" : [ ]
+  }
 } ]

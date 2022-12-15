@@ -1,10 +1,16 @@
 package commands;
 
-import momentaryInstances.PageNow;
+import momentaries.PageNow;
 
-public class HomepageSetter {
+public final class HomepageSetter {
+    private HomepageSetter() {
+
+    }
+    /**
+     * sets page to homepage
+     * @return - the new page
+     */
     public static PageNow run() {
-        PageNow pageNow = new PageNow("homepage");
-        return pageNow;
+        return new PageNow("homepage");
     }
 }

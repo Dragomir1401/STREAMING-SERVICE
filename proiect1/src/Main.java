@@ -1,6 +1,6 @@
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import commands.HomepageSetter;
-import momentaryInstances.PageNow;
+import momentaries.PageNow;
 import commands.CommandParser;
 import input.Input;
 import input.UserInput;
@@ -11,10 +11,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
 
-public class Main {
+public final class Main {
 
+    private Main() {
 
-    public static void main(String[] args) throws IOException {
+    }
+
+    /**
+     * main function
+     * @param args - args[0] - input; args[1] - output
+     * @throws IOException - file opening exception
+     */
+    public static void main(final String[] args) throws IOException {
         // initialise mapper
         ObjectMapper objectMapper = new ObjectMapper();
         // extract test output file for debug
@@ -26,8 +34,9 @@ public class Main {
         // create output dir
         File file = new File(outputFile);
         boolean resCode = file.getParentFile().mkdirs();
-        if (resCode)
+        if (resCode) {
             return;
+        }
 
         // parse input for given test
         Input programInput = objectMapper.readValue(new File(args[0]), Input.class);
