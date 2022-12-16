@@ -1,7 +1,9 @@
 package actions;
 
 import filters.FilterByCountry;
-import filters.FilterStartsWith;
+import filters.StartsWithStrategy;
+import filters.Strategy;
+import filters.UserFilter;
 import input.ActionInput;
 import input.Input;
 import input.MovieInput;
@@ -28,8 +30,8 @@ public class Search extends Command {
         if (super.getPageNow().getName().equals("movies")) {
 
             // initialise filters
-            FilterStartsWith filter = new FilterStartsWith();
-            FilterByCountry filterByCountry = new FilterByCountry();
+            Strategy strategy = new StartsWithStrategy();
+            UserFilter filterByCountry = new FilterByCountry();
 
             // set current movie filtered list on permitted movies for that country
             List<MovieInput> permittedMovies = filterByCountry.filter(super.getInput().getMovies(),
@@ -40,7 +42,7 @@ public class Search extends Command {
             content.add(super.getActionInput().getStartsWith());
 
             // set list to filtered movies
-            super.getPageNow().setMovieList(filter.meetCriteria(permittedMovies, content));
+            super.getPageNow().setMovieList(strategy.meetCriteria(permittedMovies, content));
 
             // set output
             super.getOutput().getOutput().add(new CommandOutput(super.getPageNow().getMovieList(),

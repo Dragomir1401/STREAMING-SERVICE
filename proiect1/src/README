@@ -72,6 +72,7 @@ important ones being OnPage and ChangePage. The two further develop the
 solution tree by splitting into commands.
 
 
+
      * DESIGN PATTERN 1 *
     The on page commands are implemented using factory design pattern by
 creating an abstract method command, which is extended by every type
@@ -95,27 +96,40 @@ BuyPremium      BuyTokens             Filter               Like          |
 
 
 
+
      * DESIGN PATTERN 2 *
-    As second design pattern the project uses Singleton for the current user
+    As second design pattern, the project uses Singleton for the current user
 instance and for the tokens command class, user commands and movies commands.
 The reasoning behind is that these classes need a singular instantiation
 in the program and they get changed themselves, not instantiated again, but have
 to be reset from test to test.
 
 
+
+     * DESIGN PATTERN 3 *
+    As third design pattern, the implementation follows strategy design pattern
+for the filter command. There is an interface strategy which is implemented
+by three different classes:
+
+    - GenresStrategy          - StartsWithStrategy          - ActorsStrategy
+
+    The methods which use the strategies only know about the general interface
+strategy and then decides what subclass should be followed for the apply
+strategy criteria.
+
+
+
+    There are also sorters for list of movies which implement the sort interface.
+
+                        -sortByDuration   -sortByRating
+
+
+
+
     Input class has role of database for the project and contains the list of
 users, the list of movies and the list of actions for the streaming platform.
-Output is generated using Json Object and Array Nodes to keep the JSON
+Output is generated using output class and command output class to keep the JSON
 format.
-
-
-    There are also filters and sorters for list of movies which implement the
-criteria(for filters) and sort interface(for sorters).
-
--filterByCountry  -filterStartsWith  -fulfillsGenres
-
--sortByDuration   -sortByRating      -starsActors
-
 
 
 ------------------------------------------------------------------------------

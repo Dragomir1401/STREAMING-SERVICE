@@ -1,8 +1,9 @@
 package actions;
 
 import filters.FilterByCountry;
-import filters.FulfillsGenres;
-import filters.StarsActors;
+import filters.GenresStrategy;
+import filters.ActorsStrategy;
+import filters.Strategy;
 import input.ActionInput;
 import input.Input;
 import input.MovieInput;
@@ -41,12 +42,14 @@ public class Filter extends Command {
                 // filter by contains given genre
                 if (super.getActionInput().getFilters().getContains().getGenre() != null) {
 
-                    FulfillsGenres filter = new FulfillsGenres();
+                    // create new strategy
+                    Strategy strategy = new GenresStrategy();
 
-                    if (filter.meetCriteria(permittedMovies,
+                    // apply filter strategy
+                    if (strategy.meetCriteria(permittedMovies,
                             super.getActionInput().getFilters().getContains().getGenre()) != null) {
 
-                        permittedMovies = new ArrayList<>(filter.meetCriteria(permittedMovies,
+                        permittedMovies = new ArrayList<>(strategy.meetCriteria(permittedMovies,
                                 super.getActionInput().getFilters().getContains().getGenre()));
                     }
                 }
@@ -54,13 +57,15 @@ public class Filter extends Command {
                 // filter by contains given actors
                 if (super.getActionInput().getFilters().getContains().getActors() != null) {
 
-                    StarsActors filter = new StarsActors();
+                    // create new strategy
+                    Strategy strategy = new ActorsStrategy();
 
-                    if (filter.meetCriteria(permittedMovies,
+                    // apply filter strategy
+                    if (strategy.meetCriteria(permittedMovies,
                             super.getActionInput().getFilters().getContains().getActors())
                             != null) {
 
-                        permittedMovies = new ArrayList<>(filter.meetCriteria(permittedMovies,
+                        permittedMovies = new ArrayList<>(strategy.meetCriteria(permittedMovies,
                                 super.getActionInput().getFilters().getContains().getActors()));
                     }
                 }

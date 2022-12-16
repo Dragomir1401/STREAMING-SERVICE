@@ -25,18 +25,6 @@ public final class Main {
     public static void main(final String[] argv) throws IOException {
         // initialise mapper
         ObjectMapper objectMapper = new ObjectMapper();
-        // extract test output file for debug
-        String numberOnly = argv[0].replaceAll("[^0-9]", "");
-        numberOnly = numberOnly.substring(2);
-
-        // test filename and out filename
-        String outputFile = "./checker/resources/out/basic_" + numberOnly + ".json";
-        // create output dir
-        File file = new File(outputFile);
-        boolean resCode = file.getParentFile().mkdirs();
-        if (resCode) {
-            return;
-        }
 
         // parse input for given test
         Input programInput = objectMapper.readValue(new File(argv[0]), Input.class);
@@ -53,7 +41,6 @@ public final class Main {
         // generate output
         ObjectWriter writer = objectMapper.writer(new DefaultPrettyPrinter());
         writer.writeValue(new File(argv[1]), programOutput.getOutput());
-        writer.writeValue(new File(outputFile), programOutput.getOutput());
 
         // reset current user
         pageNow.getUser().setUser(null);

@@ -6,10 +6,10 @@ import momentary.PageNow;
 import output.Output;
 
 public abstract class Command {
-    private Input input;
-    private PageNow pageNow;
-    private ActionInput actionInput;
-    private Output output;
+    private final Input input;
+    private final PageNow pageNow;
+    private final ActionInput actionInput;
+    private final Output output;
 
     public Command(final Input input, final PageNow pageNow, final ActionInput actionInput,
                    final Output output) {
