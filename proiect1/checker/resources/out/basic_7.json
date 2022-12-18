@@ -1,5 +1,6 @@
 [ {
   "error" : null,
+  "currentMoviesList" : [ ],
   "currentUser" : {
     "credentials" : {
       "name" : "Eduard",
@@ -14,25 +15,9 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  },
-  "currentMoviesList" : [ ]
+  }
 }, {
   "error" : null,
-  "currentUser" : {
-    "credentials" : {
-      "name" : "Eduard",
-      "password" : "secret",
-      "accountType" : "premium",
-      "country" : "India",
-      "balance" : "50"
-    },
-    "purchasedMovies" : [ ],
-    "watchedMovies" : [ ],
-    "likedMovies" : [ ],
-    "ratedMovies" : [ ],
-    "tokensCount" : 0,
-    "numFreePremiumMovies" : 15
-  },
   "currentMoviesList" : [ {
     "name" : "Lord, Save Us from Your Followers",
     "year" : 1998,
@@ -163,9 +148,7 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ]
-}, {
-  "error" : null,
+  } ],
   "currentUser" : {
     "credentials" : {
       "name" : "Eduard",
@@ -180,7 +163,9 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  },
+  }
+}, {
+  "error" : null,
   "currentMoviesList" : [ {
     "name" : "The Empty Hours",
     "year" : 2003,
@@ -191,13 +176,29 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ]
+  } ],
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Eduard",
+      "password" : "secret",
+      "accountType" : "premium",
+      "country" : "India",
+      "balance" : "50"
+    },
+    "purchasedMovies" : [ ],
+    "watchedMovies" : [ ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15
+  }
 }, {
   "error" : "Error",
-  "currentUser" : null,
-  "currentMoviesList" : [ ]
+  "currentMoviesList" : [ ],
+  "currentUser" : null
 }, {
   "error" : null,
+  "currentMoviesList" : [ ],
   "currentUser" : {
     "credentials" : {
       "name" : "Mihail",
@@ -212,25 +213,9 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  },
-  "currentMoviesList" : [ ]
+  }
 }, {
   "error" : null,
-  "currentUser" : {
-    "credentials" : {
-      "name" : "Mihail",
-      "password" : "discret",
-      "accountType" : "premium",
-      "country" : "China",
-      "balance" : "1337"
-    },
-    "purchasedMovies" : [ ],
-    "watchedMovies" : [ ],
-    "likedMovies" : [ ],
-    "ratedMovies" : [ ],
-    "tokensCount" : 0,
-    "numFreePremiumMovies" : 15
-  },
   "currentMoviesList" : [ {
     "name" : "Lord, Save Us from Your Followers",
     "year" : 1998,
@@ -291,9 +276,7 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ]
-}, {
-  "error" : null,
+  } ],
   "currentUser" : {
     "credentials" : {
       "name" : "Mihail",
@@ -308,7 +291,9 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  },
+  }
+}, {
+  "error" : null,
   "currentMoviesList" : [ {
     "name" : "My Sassy Girl",
     "year" : 2005,
@@ -319,9 +304,35 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ]
+  } ],
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Mihail",
+      "password" : "discret",
+      "accountType" : "premium",
+      "country" : "China",
+      "balance" : "1337"
+    },
+    "purchasedMovies" : [ ],
+    "watchedMovies" : [ ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15
+  }
 }, {
   "error" : null,
+  "currentMoviesList" : [ {
+    "name" : "My Sassy Girl",
+    "year" : 2005,
+    "duration" : 125,
+    "genres" : [ "Comedy", "Mystery", "Fantasy" ],
+    "actors" : [ "Mabel MacAless", "Iggy MacUchadair", "Arni Harrow", "Reg Kelleher" ],
+    "countriesBanned" : [ "Dominican Republic", "Indonesia", "Japan" ],
+    "numLikes" : 0,
+    "rating" : 0.0,
+    "numRatings" : 0
+  } ],
   "currentUser" : {
     "credentials" : {
       "name" : "Mihail",
@@ -346,7 +357,9 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 14
-  },
+  }
+}, {
+  "error" : null,
   "currentMoviesList" : [ {
     "name" : "My Sassy Girl",
     "year" : 2005,
@@ -357,9 +370,7 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ]
-}, {
-  "error" : null,
+  } ],
   "currentUser" : {
     "credentials" : {
       "name" : "Mihail",
@@ -394,7 +405,9 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 14
-  },
+  }
+}, {
+  "error" : null,
   "currentMoviesList" : [ {
     "name" : "My Sassy Girl",
     "year" : 2005,
@@ -403,11 +416,9 @@
     "actors" : [ "Mabel MacAless", "Iggy MacUchadair", "Arni Harrow", "Reg Kelleher" ],
     "countriesBanned" : [ "Dominican Republic", "Indonesia", "Japan" ],
     "numLikes" : 0,
-    "rating" : 0.0,
-    "numRatings" : 0
-  } ]
-}, {
-  "error" : null,
+    "rating" : 3.0,
+    "numRatings" : 1
+  } ],
   "currentUser" : {
     "credentials" : {
       "name" : "Mihail",
@@ -452,20 +463,10 @@
     } ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 14
-  },
-  "currentMoviesList" : [ {
-    "name" : "My Sassy Girl",
-    "year" : 2005,
-    "duration" : 125,
-    "genres" : [ "Comedy", "Mystery", "Fantasy" ],
-    "actors" : [ "Mabel MacAless", "Iggy MacUchadair", "Arni Harrow", "Reg Kelleher" ],
-    "countriesBanned" : [ "Dominican Republic", "Indonesia", "Japan" ],
-    "numLikes" : 0,
-    "rating" : 3.0,
-    "numRatings" : 1
-  } ]
+  }
 }, {
   "error" : null,
+  "currentMoviesList" : [ ],
   "currentUser" : {
     "credentials" : {
       "name" : "Iancu",
@@ -480,25 +481,9 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  },
-  "currentMoviesList" : [ ]
+  }
 }, {
   "error" : null,
-  "currentUser" : {
-    "credentials" : {
-      "name" : "Iancu",
-      "password" : "corega",
-      "accountType" : "premium",
-      "country" : "Japan",
-      "balance" : "50"
-    },
-    "purchasedMovies" : [ ],
-    "watchedMovies" : [ ],
-    "likedMovies" : [ ],
-    "ratedMovies" : [ ],
-    "tokensCount" : 0,
-    "numFreePremiumMovies" : 15
-  },
   "currentMoviesList" : [ {
     "name" : "Lord, Save Us from Your Followers",
     "year" : 1998,
@@ -659,9 +644,7 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ]
-}, {
-  "error" : null,
+  } ],
   "currentUser" : {
     "credentials" : {
       "name" : "Iancu",
@@ -676,7 +659,9 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  },
+  }
+}, {
+  "error" : null,
   "currentMoviesList" : [ {
     "name" : "Lord, Save Us from Your Followers",
     "year" : 1998,
@@ -687,9 +672,35 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ]
+  } ],
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Iancu",
+      "password" : "corega",
+      "accountType" : "premium",
+      "country" : "Japan",
+      "balance" : "50"
+    },
+    "purchasedMovies" : [ ],
+    "watchedMovies" : [ ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15
+  }
 }, {
   "error" : null,
+  "currentMoviesList" : [ {
+    "name" : "Lord, Save Us from Your Followers",
+    "year" : 1998,
+    "duration" : 125,
+    "genres" : [ "Comedy", "Western", "Mystery" ],
+    "actors" : [ "Camey Ingold", "Grace Volleth", "Jermaine D'Ruel", "Anselma Saxelby" ],
+    "countriesBanned" : [ "Russia", "Saudi Arabia", "Zimbabwe" ],
+    "numLikes" : 0,
+    "rating" : 0.0,
+    "numRatings" : 0
+  } ],
   "currentUser" : {
     "credentials" : {
       "name" : "Iancu",
@@ -714,7 +725,9 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 14
-  },
+  }
+}, {
+  "error" : null,
   "currentMoviesList" : [ {
     "name" : "Lord, Save Us from Your Followers",
     "year" : 1998,
@@ -725,9 +738,7 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ]
-}, {
-  "error" : null,
+  } ],
   "currentUser" : {
     "credentials" : {
       "name" : "Iancu",
@@ -762,65 +773,9 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 14
-  },
-  "currentMoviesList" : [ {
-    "name" : "Lord, Save Us from Your Followers",
-    "year" : 1998,
-    "duration" : 125,
-    "genres" : [ "Comedy", "Western", "Mystery" ],
-    "actors" : [ "Camey Ingold", "Grace Volleth", "Jermaine D'Ruel", "Anselma Saxelby" ],
-    "countriesBanned" : [ "Russia", "Saudi Arabia", "Zimbabwe" ],
-    "numLikes" : 0,
-    "rating" : 0.0,
-    "numRatings" : 0
-  } ]
+  }
 }, {
   "error" : null,
-  "currentUser" : {
-    "credentials" : {
-      "name" : "Iancu",
-      "password" : "corega",
-      "accountType" : "premium",
-      "country" : "Japan",
-      "balance" : "50"
-    },
-    "purchasedMovies" : [ {
-      "name" : "Lord, Save Us from Your Followers",
-      "year" : 1998,
-      "duration" : 125,
-      "genres" : [ "Comedy", "Western", "Mystery" ],
-      "actors" : [ "Camey Ingold", "Grace Volleth", "Jermaine D'Ruel", "Anselma Saxelby" ],
-      "countriesBanned" : [ "Russia", "Saudi Arabia", "Zimbabwe" ],
-      "numLikes" : 0,
-      "rating" : 5.0,
-      "numRatings" : 1
-    } ],
-    "watchedMovies" : [ {
-      "name" : "Lord, Save Us from Your Followers",
-      "year" : 1998,
-      "duration" : 125,
-      "genres" : [ "Comedy", "Western", "Mystery" ],
-      "actors" : [ "Camey Ingold", "Grace Volleth", "Jermaine D'Ruel", "Anselma Saxelby" ],
-      "countriesBanned" : [ "Russia", "Saudi Arabia", "Zimbabwe" ],
-      "numLikes" : 0,
-      "rating" : 5.0,
-      "numRatings" : 1
-    } ],
-    "likedMovies" : [ ],
-    "ratedMovies" : [ {
-      "name" : "Lord, Save Us from Your Followers",
-      "year" : 1998,
-      "duration" : 125,
-      "genres" : [ "Comedy", "Western", "Mystery" ],
-      "actors" : [ "Camey Ingold", "Grace Volleth", "Jermaine D'Ruel", "Anselma Saxelby" ],
-      "countriesBanned" : [ "Russia", "Saudi Arabia", "Zimbabwe" ],
-      "numLikes" : 0,
-      "rating" : 5.0,
-      "numRatings" : 1
-    } ],
-    "tokensCount" : 0,
-    "numFreePremiumMovies" : 14
-  },
   "currentMoviesList" : [ {
     "name" : "Lord, Save Us from Your Followers",
     "year" : 1998,
@@ -831,9 +786,7 @@
     "numLikes" : 0,
     "rating" : 5.0,
     "numRatings" : 1
-  } ]
-}, {
-  "error" : null,
+  } ],
   "currentUser" : {
     "credentials" : {
       "name" : "Iancu",
@@ -878,7 +831,9 @@
     } ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 14
-  },
+  }
+}, {
+  "error" : null,
   "currentMoviesList" : [ {
     "name" : "Lord, Save Us from Your Followers",
     "year" : 1998,
@@ -1039,25 +994,71 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ]
+  } ],
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Iancu",
+      "password" : "corega",
+      "accountType" : "premium",
+      "country" : "Japan",
+      "balance" : "50"
+    },
+    "purchasedMovies" : [ {
+      "name" : "Lord, Save Us from Your Followers",
+      "year" : 1998,
+      "duration" : 125,
+      "genres" : [ "Comedy", "Western", "Mystery" ],
+      "actors" : [ "Camey Ingold", "Grace Volleth", "Jermaine D'Ruel", "Anselma Saxelby" ],
+      "countriesBanned" : [ "Russia", "Saudi Arabia", "Zimbabwe" ],
+      "numLikes" : 0,
+      "rating" : 5.0,
+      "numRatings" : 1
+    } ],
+    "watchedMovies" : [ {
+      "name" : "Lord, Save Us from Your Followers",
+      "year" : 1998,
+      "duration" : 125,
+      "genres" : [ "Comedy", "Western", "Mystery" ],
+      "actors" : [ "Camey Ingold", "Grace Volleth", "Jermaine D'Ruel", "Anselma Saxelby" ],
+      "countriesBanned" : [ "Russia", "Saudi Arabia", "Zimbabwe" ],
+      "numLikes" : 0,
+      "rating" : 5.0,
+      "numRatings" : 1
+    } ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ {
+      "name" : "Lord, Save Us from Your Followers",
+      "year" : 1998,
+      "duration" : 125,
+      "genres" : [ "Comedy", "Western", "Mystery" ],
+      "actors" : [ "Camey Ingold", "Grace Volleth", "Jermaine D'Ruel", "Anselma Saxelby" ],
+      "countriesBanned" : [ "Russia", "Saudi Arabia", "Zimbabwe" ],
+      "numLikes" : 0,
+      "rating" : 5.0,
+      "numRatings" : 1
+    } ],
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 14
+  }
 }, {
   "error" : "Error",
-  "currentUser" : null,
-  "currentMoviesList" : [ ]
+  "currentMoviesList" : [ ],
+  "currentUser" : null
 }, {
   "error" : "Error",
-  "currentUser" : null,
-  "currentMoviesList" : [ ]
+  "currentMoviesList" : [ ],
+  "currentUser" : null
 }, {
   "error" : "Error",
-  "currentUser" : null,
-  "currentMoviesList" : [ ]
+  "currentMoviesList" : [ ],
+  "currentUser" : null
 }, {
   "error" : "Error",
-  "currentUser" : null,
-  "currentMoviesList" : [ ]
+  "currentMoviesList" : [ ],
+  "currentUser" : null
 }, {
   "error" : null,
+  "currentMoviesList" : [ ],
   "currentUser" : {
     "credentials" : {
       "name" : "Eduard",
@@ -1072,25 +1073,9 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  },
-  "currentMoviesList" : [ ]
+  }
 }, {
   "error" : null,
-  "currentUser" : {
-    "credentials" : {
-      "name" : "Eduard",
-      "password" : "secret",
-      "accountType" : "premium",
-      "country" : "India",
-      "balance" : "50"
-    },
-    "purchasedMovies" : [ ],
-    "watchedMovies" : [ ],
-    "likedMovies" : [ ],
-    "ratedMovies" : [ ],
-    "tokensCount" : 0,
-    "numFreePremiumMovies" : 15
-  },
   "currentMoviesList" : [ {
     "name" : "Lord, Save Us from Your Followers",
     "year" : 1998,
@@ -1221,9 +1206,7 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ]
-}, {
-  "error" : null,
+  } ],
   "currentUser" : {
     "credentials" : {
       "name" : "Eduard",
@@ -1238,7 +1221,9 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  },
+  }
+}, {
+  "error" : null,
   "currentMoviesList" : [ {
     "name" : "Belphecor: Curse of the Mummy (Belphégor - Le fantôme du Louvre)",
     "year" : 1988,
@@ -1369,9 +1354,24 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ]
+  } ],
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Eduard",
+      "password" : "secret",
+      "accountType" : "premium",
+      "country" : "India",
+      "balance" : "50"
+    },
+    "purchasedMovies" : [ ],
+    "watchedMovies" : [ ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15
+  }
 }, {
   "error" : "Error",
-  "currentUser" : null,
-  "currentMoviesList" : [ ]
+  "currentMoviesList" : [ ],
+  "currentUser" : null
 } ]

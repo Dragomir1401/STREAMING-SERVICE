@@ -1,5 +1,6 @@
 [ {
   "error" : null,
+  "currentMoviesList" : [ ],
   "currentUser" : {
     "credentials" : {
       "name" : "Ramsi",
@@ -14,25 +15,9 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  },
-  "currentMoviesList" : [ ]
+  }
 }, {
   "error" : null,
-  "currentUser" : {
-    "credentials" : {
-      "name" : "Ramsi",
-      "password" : "numiplacevelea",
-      "accountType" : "standard",
-      "country" : "Ireland",
-      "balance" : "300"
-    },
-    "purchasedMovies" : [ ],
-    "watchedMovies" : [ ],
-    "likedMovies" : [ ],
-    "ratedMovies" : [ ],
-    "tokensCount" : 0,
-    "numFreePremiumMovies" : 15
-  },
   "currentMoviesList" : [ {
     "name" : "John Wick: Chapter 3 - Parabellum",
     "year" : 2019,
@@ -53,9 +38,7 @@
     "numLikes" : 0,
     "rating" : 0.0,
     "numRatings" : 0
-  } ]
-}, {
-  "error" : null,
+  } ],
   "currentUser" : {
     "credentials" : {
       "name" : "Ramsi",
@@ -70,6 +53,23 @@
     "ratedMovies" : [ ],
     "tokensCount" : 0,
     "numFreePremiumMovies" : 15
-  },
-  "currentMoviesList" : [ ]
+  }
+}, {
+  "error" : null,
+  "currentMoviesList" : [ ],
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Ramsi",
+      "password" : "numiplacevelea",
+      "accountType" : "standard",
+      "country" : "Ireland",
+      "balance" : "300"
+    },
+    "purchasedMovies" : [ ],
+    "watchedMovies" : [ ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15
+  }
 } ]

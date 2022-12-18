@@ -6,9 +6,13 @@ import java.util.Comparator;
 import java.util.List;
 
 public class SortByDuration implements Sort {
-
+    /**
+     * sorts by duration
+     * @param movies - movies list
+     * @param parameter - increasing/decreasing
+     */
     @Override
-    public void run(List<MovieInput> movies, String parameter) {
+    public void run(final List<MovieInput> movies, final String parameter) {
 
         if (parameter.equals("increasing")) {
             movies.sort(Comparator.comparingInt(MovieInput::getDuration));
